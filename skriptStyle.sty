@@ -1,0 +1,74 @@
+% ==================================================================
+% FILE     skriptStyle.sty
+% MACHINE  all
+% INFO     Preamble für TALS Skript
+%          benötigt "basicDocumentStyle" und "basicMathDocStyle"
+%
+% DATE     15.12.2015
+% OWNER    Bischofberger
+% ==================================================================
+
+\ProvidesPackage{skriptStyle}
+
+% enumeration of chapters, sections
+\setcounter{secnumdepth}{2}
+\setcounter{chapter}{-1}
+
+% Put chapter pages automatically on the right side even though it's a oneside document.
+% Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
+\makeatletter
+\def\cleardoublepage{\clearpage\ifodd\c@page\else
+  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
+\makeatother
+
+% graphics
+\graphicspath{{images/}{tikzPreCompile/}}
+
+% header/footer
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead{BMS Zürich}
+\chead{\nouppercase{\leftmark}}
+\rhead{\nouppercase{\rightmark}}
+\cfoot{\thepage}
+\fancypagestyle{plain}{
+	\fancyhf{}
+  \lhead{BMS Zürich}
+	\chead{\nouppercase{\leftmark}}
+  \cfoot{\thepage}}
+
+
+% ----------------------------------------------------------------
+% custom environments...
+% ----------------------------------------------------------------
+% HP Prime environment
+\NewEnviron{TR}
+{
+	\begin{figure}[H]
+		\begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+			\begin{minipage}[t][20.5mm][b]{0.09\textwidth} 
+				\includegraphics[width=10mm]{HP-Prime.png}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[t]{0.89\textwidth}
+        \BODY
+			\end{minipage}
+		\end{mdframed}
+	\end{figure}
+}
+
+% Definiton with gray frame
+\NewEnviron{FrameDef}
+{
+  \begin{mdframed}[linecolor=gray!40!,linewidth=2pt,innertopmargin=1pt,innerbottommargin=\topskip]
+    \BZ
+    \begin{Def}
+      \BODY
+    \end{Def}
+  \end{mdframed}
+}
+
+% Calculator keys
+\newcommand{\Keys}[1]{\fbox{\url{#1}}}
+
+

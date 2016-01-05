@@ -1,0 +1,59 @@
+% ==================================================================
+% FILE     examStyle.sty
+% MACHINE  all
+% INFO     Preamble für BMZ Prüfungen
+%          Es müssen "basicDocumentStyle" und "basicMathDocStyle" geladen sein.
+%
+% DATE     05.01.2016
+% OWNER    Bischofberger
+% ==================================================================
+
+\ProvidesPackage{examStyle}
+
+% header/footer
+\usepackage{lastpage}
+\lhead{BMS Zürich}
+\rhead{Seite \thepage/\pageref{LastPage}}
+\cfoot{}
+
+% compute total of points
+% use with "\total{TotalOfPoints}""
+\usepackage{totcount}
+\newtotcounter{TotalOfPoints}
+\setcounter{TotalOfPoints}{0}
+
+% ----------------------------------------------------------------
+% custom environments...
+% ----------------------------------------------------------------
+% Prüfungsaufgabe - Umgebung
+% TODO: gib Argument für Anzahl erreichbarer Punkte
+\newcounter{ExamExerciseCounter}
+
+\newenvironment{ExamExerciseOnePage}[1]{
+  \stepcounter{ExamExerciseCounter}
+  \textbf{Aufgabe \theExamExerciseCounter \quad} [#1 Pkt] 
+  \addtocounter{TotalOfPoints}{#1}}
+{\clearpage}
+
+\newenvironment{ExamExercise}[1]{
+  \stepcounter{ExamExerciseCounter}
+  \textbf{Aufgabe \theExamExerciseCounter \quad} [#1 Pkt] 
+  \addtocounter{TotalOfPoints}{#1}}
+{\par\addvspace{2em}}
+
+
+%\NewEnviron{ExamExerciseOnePage}
+%{
+%  \stepcounter{ExamExerciseCounter}
+%  {\bfseries Aufgabe \theExamExerciseCounter \quad}
+%  \BODY
+%  \vspace{1em}
+%  \clearpage
+%}
+%\NewEnviron{ExamExercise}
+%{
+%  \stepcounter{ExamExerciseCounter}
+%  {\bfseries Aufgabe \theExamExerciseCounter \quad}
+%  \BODY
+%  \vspace{1em}
+%}
