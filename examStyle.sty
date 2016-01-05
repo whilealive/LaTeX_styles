@@ -16,18 +16,16 @@
 \rhead{Seite \thepage/\pageref{LastPage}}
 \cfoot{}
 
-% compute total of points
-% use with "\total{TotalOfPoints}""
-\usepackage{totcount}
-\newtotcounter{TotalOfPoints}
-\setcounter{TotalOfPoints}{0}
-
 % ----------------------------------------------------------------
 % custom environments...
 % ----------------------------------------------------------------
 % Prüfungsaufgabe - Umgebung
-% TODO: gib Argument für Anzahl erreichbarer Punkte
 \newcounter{ExamExerciseCounter}
+\setcounter{ExamExerciseCounter}{0}
+
+\usepackage{totcount}
+\newtotcounter{TotalOfPoints}
+\setcounter{TotalOfPoints}{0}
 
 \newenvironment{ExamExerciseOnePage}[1]{
   \stepcounter{ExamExerciseCounter}
@@ -40,20 +38,3 @@
   \textbf{Aufgabe \theExamExerciseCounter \quad} [#1 Pkt] 
   \addtocounter{TotalOfPoints}{#1}}
 {\par\addvspace{2em}}
-
-
-%\NewEnviron{ExamExerciseOnePage}
-%{
-%  \stepcounter{ExamExerciseCounter}
-%  {\bfseries Aufgabe \theExamExerciseCounter \quad}
-%  \BODY
-%  \vspace{1em}
-%  \clearpage
-%}
-%\NewEnviron{ExamExercise}
-%{
-%  \stepcounter{ExamExerciseCounter}
-%  {\bfseries Aufgabe \theExamExerciseCounter \quad}
-%  \BODY
-%  \vspace{1em}
-%}
