@@ -1,0 +1,30 @@
+% ==================================================================
+% FILE     bmzExtrablattStyle.sty
+% MACHINE  all
+% INFO     Preamble für BMZ Extrablätter
+%          Es müssen "basicDocumentStyle" und "basicMathDocStyle" geladen sein.
+%
+% DATE     07.01.2016
+% OWNER    Bischofberger
+% ==================================================================
+
+\ProvidesPackage{bmzExtrablattStyle}
+
+\setcounter{secnumdepth}{-2}  % keine Nummern in section usw.
+
+% header/footer
+\lhead{BMS Zürich}
+\rhead{\thepage}
+\cfoot{}
+
+% ----------------------------------------------------------------
+% custom environments...
+% ----------------------------------------------------------------
+\newcommand{\Adressblock}{
+  \begin{tikzpicture}[overlay, remember picture]
+    \path[align=left] (current page.north west) ++(33.5mm,-17.3mm) node[below right] 
+    {Berufsmaturitätsschule Zürich\\Lagerstrasse 55, 8090 Zürich\\[1em]Bruno Bischofberger};
+  \end{tikzpicture}
+  \BZ[4]}
+
+
