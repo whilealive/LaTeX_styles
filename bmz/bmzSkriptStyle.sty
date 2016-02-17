@@ -4,11 +4,13 @@
 % INFO     Preamble für TALS Skript
 %          benötigt "basicDocumentStyle" und "basicMathDocStyle"
 %
-% DATE     22.01.2016
+% DATE     17.02.2016
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{bmzSkriptStyle}
+
+\raggedbottom
 
 % enumeration of chapters, sections
 \setcounter{secnumdepth}{2}
@@ -24,40 +26,45 @@
 % graphics
 \graphicspath{{images/}{tikzPreCompile/}}
 
-% header/footer
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\lhead{BMS Zürich}
-\chead{\nouppercase{\leftmark}}
-\rhead{\nouppercase{\rightmark}}
-\cfoot{\thepage}
-\fancypagestyle{plain}{
-	\fancyhf{}
-  \lhead{BMS Zürich}
-	\chead{\nouppercase{\leftmark}}
-  \cfoot{\thepage}}
-
+% header/footer (KOMA-Script)
+\renewcommand*{\chaptermarkformat}{}  % no numbers
+\automark[section]{chapter}
+\lohead[BMS Zürich]{BMS Zürich}
+\lehead[BMS Zürich]{BMS Zürich}
+\cohead[\leftmark]{\leftmark}
+\cehead[\leftmark]{\leftmark}
+\rohead[]{\rightmark}
+\rehead[]{\rightmark}
 
 % ----------------------------------------------------------------
 % custom environments...
 % ----------------------------------------------------------------
+% Enlarge \textwidth by 30mm, so that it is centered
+\NewEnviron{FullWidth}
+{
+  \begin{addmargin*}[0mm]{-30mm}
+    \BODY
+  \end{addmargin*}
+}
+
 % HP Prime environment
 \NewEnviron{TR}
 {
-	\begin{figure}[H]
-		\begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-			\begin{minipage}[t][20.5mm][b]{0.09\textwidth} 
-				\includegraphics[width=10mm]{HP-Prime.png}
-			\end{minipage}
-			\hfill
-			\begin{minipage}[t]{0.89\textwidth}
-        \BODY
-			\end{minipage}
-		\end{mdframed}
-	\end{figure}
+  \begin{figure}[H]
+    \begin{addmargin*}[0mm]{-30mm}
+      \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+        \begin{minipage}[t][20.5mm][b]{0.09\linewidth} 
+          \includegraphics[width=10mm]{HP-Prime.png}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.89\linewidth}
+          \BODY
+        \end{minipage}
+      \end{mdframed}
+    \end{addmargin*}
+  \end{figure}
 }
 
 % Calculator keys
 \newcommand{\Keys}[1]{\fbox{\url{#1}}}
-
 
