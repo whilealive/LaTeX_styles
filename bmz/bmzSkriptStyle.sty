@@ -55,21 +55,28 @@
 \NewEnviron{TR}
 {
   \begin{figure}[H]
-    \begin{addmargin*}[0mm]{-30mm}
-      \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-        \begin{minipage}[t][26.5mm][b]{0.165\linewidth} 
-          \centering
-          \includegraphics[width=13mm]{HP-Prime.png}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.815\linewidth}
-          \BODY
-        \end{minipage}
-      \end{mdframed}
-    \end{addmargin*}
+    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[1em]
+    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+      \vspace{-1em}  % remove vertical space added by \marginnote
+      \BODY
+    \end{mdframed}
   \end{figure}
 }
 
 % Calculator keys
 \newcommand{\Keys}[1]{\fbox{\url{#1}}}
 
+% Aufgabenliste aus Frommenwiler
+\NewEnviron{Frommenwiler}
+{
+  \begin{Aufg}
+    Lösen Sie die folgenden Aufgaben aus Frommenwiler.\\
+    \begin{tabularx}{\textwidth}{Xp{12mm}X}
+      \toprule
+      Aufgabe & Seite & Bemerkungen\\
+      \midrule
+      \BODY
+      \bottomrule
+    \end{tabularx}
+  \end{Aufg}
+}
