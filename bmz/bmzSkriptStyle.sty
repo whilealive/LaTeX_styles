@@ -4,12 +4,13 @@
 % INFO     Preamble für TALS Skript
 %          benötigt "basicDocumentStyle" und "basicMathDocStyle"
 %
-% DATE     17.02.2016
+% DATE     18.02.2016
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{bmzSkriptStyle}
 
+% do not try to fill pages with content vertically
 \raggedbottom
 
 % enumeration of chapters, sections
@@ -36,6 +37,9 @@
 \rohead[]{\rightmark}
 \rehead[]{\rightmark}
 
+% for notes in wide margin -> also see geometry package inclusion
+\usepackage{marginnote}
+
 % ----------------------------------------------------------------
 % custom environments...
 % ----------------------------------------------------------------
@@ -53,11 +57,12 @@
   \begin{figure}[H]
     \begin{addmargin*}[0mm]{-30mm}
       \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-        \begin{minipage}[t][20.5mm][b]{0.09\linewidth} 
-          \includegraphics[width=10mm]{HP-Prime.png}
+        \begin{minipage}[t][26.5mm][b]{0.165\linewidth} 
+          \centering
+          \includegraphics[width=13mm]{HP-Prime.png}
         \end{minipage}
         \hfill
-        \begin{minipage}[t]{0.89\linewidth}
+        \begin{minipage}[t]{0.815\linewidth}
           \BODY
         \end{minipage}
       \end{mdframed}
