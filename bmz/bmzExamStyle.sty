@@ -4,7 +4,7 @@
 % INFO     Preamble für BMZ Prüfungen
 %          Es müssen "basicDocumentStyle" und "basicMathDocStyle" geladen sein.
 %
-% DATE     09.02.2016
+% DATE     23.02.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -26,12 +26,6 @@
 \usepackage{totcount}
 \newtotcounter{TotalOfPoints}
 \setcounter{TotalOfPoints}{0}
-
-\newenvironment{ExamExerciseOnePage}[1]{
-  \stepcounter{ExamExerciseCounter}
-  \textbf{Aufgabe \theExamExerciseCounter\,} [#1 Pkt]
-  \addtocounter{TotalOfPoints}{#1}\ignorespaces}
-{\clearpage}
 
 \newenvironment{ExamExercise}[1]{
   \stepcounter{ExamExerciseCounter}
