@@ -4,7 +4,7 @@
 % INFO     Preamble für TALS Skript
 %          benötigt "basicDocumentStyle" und "basicMathDocStyle"
 %
-% DATE     18.02.2016
+% DATE     25.02.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -43,7 +43,7 @@
 % ----------------------------------------------------------------
 % custom environments...
 % ----------------------------------------------------------------
-% Enlarge \textwidth by 30mm, so that it is centered
+% Enlarge \textwidth by 30mm, so that it is centered on a4paper
 \NewEnviron{FullWidth}
 {
   \begin{addmargin*}[0mm]{-30mm}
@@ -70,13 +70,14 @@
 \NewEnviron{Frommenwiler}
 {
   \begin{Aufg}
-    Lösen Sie die folgenden Aufgaben aus Frommenwiler.\\
+    Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
     \begin{tabularx}{\textwidth}{Xp{12mm}X}
       \toprule
       Aufgabe & Seite & Bemerkungen\\
       \midrule
       \BODY
       \bottomrule
-    \end{tabularx}
+    \end{tabularx}\par
+    \BZ[.5]
   \end{Aufg}
 }
