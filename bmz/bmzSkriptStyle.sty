@@ -4,7 +4,7 @@
 % INFO     Preamble für TALS Skript
 %          benötigt "basicDocumentStyle" und "basicMathDocStyle"
 %
-% DATE     31.03.2016
+% DATE     05.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -40,6 +40,10 @@
 % for notes in wide margin -> also see geometry package inclusion
 \usepackage{marginnote}
 
+% change globally to ]a,b[ intervalls here...
+\usepackage{interval}
+\intervalconfig{soft open fences, separator symbol={;}}
+
 % ----------------------------------------------------------------
 % custom environments...
 % ----------------------------------------------------------------
@@ -72,17 +76,18 @@
 % Aufgabenliste aus Frommenwiler
 \NewEnviron{Frommenwiler}
 {
-  \begin{Aufg}
-    Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
-    \begin{tabularx}{\textwidth}{Xp{12mm}X}
-      \toprule
-      Aufgabe & Seite & Bemerkungen\\
-      \midrule
-      \BODY
-      \bottomrule
-    \end{tabularx}\par
-    \BZ[.5]
-  \end{Aufg}
+  \vbox{
+    \begin{Aufg}
+      Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
+      \begin{tabularx}{\textwidth}{Xp{12mm}X}
+        \toprule
+        Aufgabe & Seite & Bemerkungen\\
+        \midrule
+        \BODY
+        \bottomrule
+      \end{tabularx}
+    \end{Aufg}
+  }
 }
 
 % ----------------------------------------------------------------
