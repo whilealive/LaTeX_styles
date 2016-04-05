@@ -56,12 +56,13 @@
 }
 
 % HP Prime environment
-\NewEnviron{TR}
+\NewEnviron{TR}[1][Titel...]
 {
   \begin{figure}[H]
     \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[1em]
     \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
       \vspace{-1em}  % remove vertical space added by \marginnote
+      \subsubsection{TR: #1}
       \BODY
     \end{mdframed}
   \end{figure}
@@ -76,7 +77,7 @@
 % Aufgabenliste aus Frommenwiler
 \NewEnviron{Frommenwiler}
 {
-  \vbox{
+  \begin{minipage}{\linewidth}
     \begin{Aufg}
       Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
       \begin{tabularx}{\textwidth}{Xp{12mm}X}
@@ -87,7 +88,7 @@
         \bottomrule
       \end{tabularx}
     \end{Aufg}
-  }
+  \end{minipage}
 }
 
 % ----------------------------------------------------------------
