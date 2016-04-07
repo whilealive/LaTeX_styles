@@ -4,7 +4,7 @@
 % INFO     Preamble für TALS Skript
 %          benötigt "basicDocumentStyle" und "basicMathDocStyle"
 %
-% DATE     05.04.2016
+% DATE     07.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -19,10 +19,8 @@
 
 % Put chapter pages automatically on the right side even though it's a oneside document.
 % Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
-\makeatletter
 \def\cleardoublepage{\clearpage\ifodd\c@page\else
   \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
-\makeatother
 
 % graphics
 \graphicspath{{images/}{tikzPreCompile/}}
