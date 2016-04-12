@@ -1,26 +1,28 @@
 % ==================================================================
-% FILE     bmzSkriptStyle.sty
+% FILE     bmzSkript.cls
 % MACHINE  all
-% INFO     Preamble für TALS Skript
-%          benötigt "basicDocumentStyle" und "basicMathDocStyle"
+% INFO     documentclass für TALS Skript
 %
-% DATE     07.04.2016
+% DATE     12.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
-\ProvidesPackage{bmzSkriptStyle}
+\ProvidesClass{bmzSkript}
+\NeedsTeXFormat{LaTeX2e}
 
-% do not try to fill pages with content vertically
+\LoadClass[11pt,twoside,headings=optiontohead]{scrreprt}
+\RequirePackage[a4paper,inner=30mm,outer=60mm,top=30mm,bottom=45mm,marginparwidth=40mm]{geometry}  % textwidth=120mm
+
+% my styles, in correct order
+\RequirePackage{basicDocumentStyle}
+\RequirePackage{basicMathDocStyle}
+
+% do not try to fill pages with content vertically (needed as it's twoside)
 \raggedbottom
 
 % enumeration of chapters, sections
 \setcounter{secnumdepth}{2}
 \setcounter{chapter}{-1}
-
-% Put chapter pages automatically on the right side even though it's a oneside document.
-% Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
-\def\cleardoublepage{\clearpage\ifodd\c@page\else
-  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
 
 % graphics
 \graphicspath{{images/}{tikzPreCompile/}}
@@ -36,15 +38,20 @@
 \rehead[]{\rightmark}
 
 % for notes in wide margin -> also see geometry package inclusion
-\usepackage{marginnote}
+\RequirePackage{marginnote}
 
 % change globally to ]a,b[ intervalls here...
-\usepackage{interval}
+\RequirePackage{interval}
 \intervalconfig{soft open fences, separator symbol={;}}
 
 % ----------------------------------------------------------------
-% custom environments...
+% custom commands and environments...
 % ----------------------------------------------------------------
+% Put chapter pages automatically on the right side even though it's a oneside document.
+% Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
+\def\cleardoublepage{\clearpage\ifodd\c@page\else
+  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
+
 % Enlarge \textwidth by 30mm, so that it is centered on a4paper
 \NewEnviron{FullWidth}
 {
@@ -75,6 +82,7 @@
 % Aufgabenliste aus Frommenwiler
 \NewEnviron{Frommenwiler}
 {
+  \medskip
   \begin{minipage}{\linewidth}
     \begin{Aufg}
       Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
@@ -87,6 +95,7 @@
       \end{tabularx}
     \end{Aufg}
   \end{minipage}
+  \smallskip
 }
 
 % ----------------------------------------------------------------
