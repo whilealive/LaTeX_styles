@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     12.04.2016
+% DATE     15.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,7 +16,7 @@
 \LoadClass[11pt,headings=optiontohead]{scrartcl}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocumentStyle}
+% my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
 
 % keine Nummern in section usw.

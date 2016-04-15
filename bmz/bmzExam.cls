@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     12.04.2016
+% DATE     15.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -13,7 +13,7 @@
 \LoadClass[11pt]{scrreprt}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocumentStyle}
+% my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
 
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}

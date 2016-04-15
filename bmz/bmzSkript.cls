@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     12.04.2016
+% DATE     15.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -13,8 +13,7 @@
 \LoadClass[11pt,twoside,headings=optiontohead]{scrreprt}
 \RequirePackage[a4paper,inner=30mm,outer=60mm,top=30mm,bottom=45mm,marginparwidth=40mm]{geometry}  % textwidth=120mm
 
-% my styles, in correct order
-\RequirePackage{basicDocumentStyle}
+% my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
 
 % do not try to fill pages with content vertically (needed as it's twoside)
