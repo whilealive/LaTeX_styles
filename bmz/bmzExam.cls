@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     15.04.2016
+% DATE     17.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -35,13 +35,13 @@
 % Dokumentklassenoptionen
 % \SetExamNumber
 \def\@ExamNumber{00}
-\newcommand{\SetExamNumber}[1]{\def\@ExamNumber{#1}}
+\newcommand*{\SetExamNumber}[1]{\def\@ExamNumber{#1}}
 % \SetSemesterNumber
 \def\@SemesterNumber{00}
-\newcommand{\SetSemesterNumber}[1]{\def\@SemesterNumber{#1}}
+\newcommand*{\SetSemesterNumber}[1]{\def\@SemesterNumber{#1}}
 % \SetExamRules
 \def\@ExamRules{Keine Regeln}
-\newcommand{\SetExamRules}[1]{\def\@ExamRules{#1}}
+\newcommand*{\SetExamRules}[1]{\def\@ExamRules{#1}}
 
 % Prüfungsaufgabe - Umgebung
 \newcounter{ExamExerciseCounter}
@@ -58,7 +58,7 @@
 {\par\addvspace{2em}}
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
-\newcommand{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
+\newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
 
 % ----------------------------------------------------------------
 % Begin document with...
@@ -76,7 +76,7 @@
   \opt{serieB}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie B}}
   \opt{Nachhol}{\textbf{\Large Nachholprüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
 
-  \renewcommand{\arraystretch}{1.6}
+  \renewcommand*{\arraystretch}{1.6}
   \begin{figure}[H]
     \begin{tabular}{|l@{\hspace{80mm}}|l@{\hspace{35mm}}|}
       \hline

@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     15.04.2016
+% DATE     17.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -73,10 +73,10 @@
 }
 
 % Calculator keys
-\newcommand{\Keys}[1]{\fbox{\tt #1}}
+\newcommand*{\Keys}[1]{\fbox{\tt #1}}
 
 % Logische Mengen
-\newcommand{\Logic}[1]{\textsf{\textbf{#1}}}
+\newcommand*{\Logic}[1]{\textsf{\textbf{#1}}}
 
 % Aufgabenliste aus Frommenwiler
 \NewEnviron{Frommenwiler}

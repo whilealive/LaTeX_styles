@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     15.04.2016
+% DATE     17.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -32,10 +32,10 @@
 % custom commands and environments...
 % ----------------------------------------------------------------
 \def\@Titel{Titel}
-\newcommand{\SetTitel}[1]{\def\@Titel{#1}}
+\newcommand*{\SetTitel}[1]{\def\@Titel{#1}}
 
 
-\newcommand{\Adressblock}{
+\newcommand*{\Adressblock}{
   \begin{tikzpicture}[overlay, remember picture]
     \path[align=left] (current page.north west) ++(33.5mm,-17.3mm) node[below right] 
     {Berufsmaturitätsschule Zürich\\Lagerstrasse 55, 8090 Zürich\\[1em]Bruno Bischofberger};
