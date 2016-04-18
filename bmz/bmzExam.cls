@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     17.04.2016
+% DATE     18.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -51,11 +51,13 @@
 \newtotcounter{TotalOfPoints}
 \setcounter{TotalOfPoints}{0}
 
-\newenvironment{ExamExercise}[1]{
-  \stepcounter{ExamExerciseCounter}
-  \textbf{Aufgabe \theExamExerciseCounter\,} [#1 Pkt]
-  \addtocounter{TotalOfPoints}{#1}\ignorespaces}
-{\par\addvspace{2em}}
+\newenvironment{ExamExercise}[1]{%
+  \stepcounter{ExamExerciseCounter}%
+  \textbf{Aufgabe \theExamExerciseCounter\,} [#1 Pkt]%
+  \addtocounter{TotalOfPoints}{#1}\ignorespaces%
+}{%
+  \par\addvspace{2em}%
+}
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
@@ -63,7 +65,7 @@
 % ----------------------------------------------------------------
 % Begin document with...
 % ----------------------------------------------------------------
-\AtBeginDocument{
+\AtBeginDocument{%
   % Titelseite
   \thispagestyle{empty}
   \newgeometry{textwidth=140mm,top=17.5mm,bottom=40mm}

@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     17.04.2016
+% DATE     18.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -48,8 +48,9 @@
 % ----------------------------------------------------------------
 % Put chapter pages automatically on the right side even though it's a oneside document.
 % Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
-\def\cleardoublepage{\clearpage\ifodd\c@page\else
-  \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
+\def\cleardoublepage{%
+  \clearpage\ifodd\c@page\else\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi
+}
 
 % Enlarge \textwidth by 30mm, so that it is centered on a4paper
 \NewEnviron{FullWidth}
