@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     18.04.2016
+% DATE     25.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -18,6 +18,7 @@
 
 % my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
+\RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
 
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
@@ -35,11 +36,11 @@
 \newcommand*{\SetTitel}[1]{\def\@Titel{#1}}
 
 \newcommand*{\Adressblock}{%
-  \begin{tikzpicture}[overlay, remember picture]
-    \path[align=left] (current page.north west) ++(33.5mm,-17.3mm) node[below right] 
-    {Berufsmaturitätsschule Zürich\\Lagerstrasse 55, 8090 Zürich\\[1em]Bruno Bischofberger};
-  \end{tikzpicture}
-  \BZ[4]%
+  \begin{textblock*}{60mm}(35mm,18.75mm)
+    Berufsmaturitätsschule Zürich\\
+    Lagerstrasse 55, 8090 Zürich\\[2ex]
+    Bruno Bischofberger
+  \end{textblock*}%
 }
 
 % Aufgabenliste aus Frommenwiler (kopiert von bmzSkriptStyle)
@@ -65,6 +66,7 @@
 \AtBeginDocument{%
   \thispagestyle{empty}%
   \Adressblock
+  \vspace*{22mm}%
   \section{\@Titel}%
 }
 
