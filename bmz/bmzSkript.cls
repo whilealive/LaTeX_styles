@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     18.04.2016
+% DATE     26.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -96,6 +96,15 @@
     \end{Aufg}
   \end{minipage}
   \smallskip
+}
+
+\NewEnviron{SolPage}
+{
+  \clearpage
+  \section{Lösungen}
+  \begin{flushleft}
+    \BODY
+  \end{flushleft}
 }
 
 % ----------------------------------------------------------------
