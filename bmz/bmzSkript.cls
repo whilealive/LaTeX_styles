@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     26.04.2016
+% DATE     28.04.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -65,6 +65,20 @@
 {
   \begin{figure}[H]
     \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[1em]
+    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+      \vspace{-1em}  % remove vertical space added by \marginnote
+      \subsubsection{TR: #1}
+      \BODY
+    \end{mdframed}
+  \end{figure}
+}
+
+% TI Nspire environment
+% TODO: find image...
+\NewEnviron{Nspire}[1][Titel...]
+{
+  \begin{figure}[H]
+    \marginnote{\includegraphics[width=12mm]{TI-Nspire.png}}[1em]
     \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
       \vspace{-1em}  % remove vertical space added by \marginnote
       \subsubsection{TR: #1}
