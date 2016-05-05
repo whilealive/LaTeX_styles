@@ -3,14 +3,14 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     28.04.2016
+% DATE     05.05.2016
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesClass{bmzSkript}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[11pt,twoside,headings=optiontohead]{scrreprt}
+\LoadClass[11pt,twoside,headings=optiontohead,open=right]{scrreprt}
 \RequirePackage[a4paper,inner=30mm,outer=60mm,top=30mm,bottom=45mm,marginparwidth=40mm]{geometry}  % textwidth=120mm
 
 % my math style (loads basicDocumentStyle by default)
