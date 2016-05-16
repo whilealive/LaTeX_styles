@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     18.04.2016
+% DATE     16.05.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -53,7 +53,7 @@
 
 \newenvironment{ExamExercise}[1]{%
   \stepcounter{ExamExerciseCounter}%
-  \textbf{Aufgabe \theExamExerciseCounter\,} [#1 Pkt]%
+  \textbf{Aufgabe \theExamExerciseCounter\ } [#1 Pkt]\ %
   \addtocounter{TotalOfPoints}{#1}\ignorespaces%
 }{%
   \par\addvspace{2em}%
