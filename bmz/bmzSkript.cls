@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     05.05.2016
+% DATE     21.05.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -63,28 +63,16 @@
 % HP Prime environment
 \NewEnviron{TR}[1][Titel...]
 {
-  \begin{figure}[H]
-    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[1em]
+  \begin{minipage}[c]{\linewidth}
+    \vspace{-1ex}  % remove vertical space above frame added by \marginnote
+    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]  % alternativ: TI-Nspire.png
     \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-      \vspace{-1em}  % remove vertical space added by \marginnote
+      \vspace{-2ex}  % remove vertical space inside frame added by \marginnote
       \subsubsection{TR: #1}
       \BODY
     \end{mdframed}
-  \end{figure}
-}
-
-% TI Nspire environment
-% TODO: find image...
-\NewEnviron{Nspire}[1][Titel...]
-{
-  \begin{figure}[H]
-    \marginnote{\includegraphics[width=12mm]{TI-Nspire.png}}[1em]
-    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-      \vspace{-1em}  % remove vertical space added by \marginnote
-      \subsubsection{TR: #1}
-      \BODY
-    \end{mdframed}
-  \end{figure}
+  \end{minipage}%
+  \BZ
 }
 
 % Calculator keys
@@ -112,6 +100,7 @@
   \smallskip
 }
 
+% Lösungsseite (immer letzte Seite pro Kapitel)
 \NewEnviron{SolPage}
 {
   \clearpage
