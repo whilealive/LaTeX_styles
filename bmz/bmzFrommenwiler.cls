@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     16.06.2016
+% DATE     05.07.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -18,7 +18,11 @@
 
 % my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
+\RequirePackage{pgfplotsStyle}
 \RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
+
+% globaler Ordner der einzelnen Lösungen
+\newcommand*{\Dir}{Loesungen/}
 
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
