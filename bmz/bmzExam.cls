@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     16.05.2016
+% DATE     07.07.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -33,6 +33,9 @@
 % custom commands and environments...
 % ----------------------------------------------------------------
 % Dokumentklassenoptionen
+% \SetClass
+\def\@Class{Klasse}
+\newcommand*{\SetClass}[1]{\def\@Class{#1}}
 % \SetExamNumber
 \def\@ExamNumber{00}
 \newcommand*{\SetExamNumber}[1]{\def\@ExamNumber{#1}}
@@ -78,16 +81,16 @@
   \opt{serieB}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie B}}
   \opt{Nachhol}{\textbf{\Large Nachholprüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
 
+  \BZ
   \renewcommand*{\arraystretch}{1.6}
-  \begin{figure}[H]
-    \begin{tabular}{|l@{\hspace{80mm}}|l@{\hspace{35mm}}|}
-      \hline
-      Name & Klasse\\
-      \hline
-      \multicolumn{2}{|l|}{Datum}\\
-      \hline
-    \end{tabular}
-  \end{figure}
+  \begin{tabularx}{\linewidth}{|X|c|}
+    \hline
+    Name & \@Class\\
+    \hline
+    \multicolumn{2}{|l|}{Datum}\\
+    \hline
+  \end{tabularx}
+  \BZ
 
   \@ExamRules
 
