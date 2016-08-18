@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
 %
-% DATE     07.07.2016
+% DATE     14.07.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -19,6 +19,10 @@
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}
 \ProcessOptions\relax
 \RequirePackage{optional}
+
+% Gibt an, wo sich die Prüfungsaufgaben befinden
+% \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\def\input@path{{$HOME/Documents/Work/BMS-ZH/Pruefungsaufgabensammlung/}}
 
 % header/footer
 \RequirePackage{lastpage}
@@ -45,6 +49,9 @@
 % \SetExamRules
 \def\@ExamRules{Keine Regeln}
 \newcommand*{\SetExamRules}[1]{\def\@ExamRules{#1}}
+% \SetTeil
+\def\@Teil{0}
+\newcommand*{\SetTeil}[1]{\def\@Teil{#1}}
 
 % Prüfungsaufgabe - Umgebung
 \newcounter{ExamExerciseCounter}
@@ -80,6 +87,9 @@
   \opt{serieA}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie A}}
   \opt{serieB}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie B}}
   \opt{Nachhol}{\textbf{\Large Nachholprüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
+
+  % TODO: make more robust
+  \ifnum\@Teil>0{\BZ\textbf{\Large Teil \@Teil}}\fi
 
   \BZ
   \renewcommand*{\arraystretch}{1.6}
