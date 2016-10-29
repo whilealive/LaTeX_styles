@@ -2,8 +2,9 @@
 % FILE     bmzExam.cls
 % MACHINE  all
 % INFO     documentclass für BMZ Prüfungen
+%          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     14.07.2016
+% DATE     29.10.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -29,8 +30,7 @@
 \lohead{BMS Zürich}
 \rohead{Seite \thepage/\pageref{LastPage}}
 \cofoot{}
-\opt{serieA}{\cohead{Prüfung \@ExamNumber, Serie A}}
-\opt{serieB}{\cohead{Prüfung \@ExamNumber, Serie B}}
+\opt{Regular}{\cohead{Prüfung \@ExamNumber}}
 \opt{Nachhol}{\cohead{Nachholprüfung \@ExamNumber}}
 
 % ----------------------------------------------------------------
@@ -84,8 +84,7 @@
   Bruno Bischofberger
   \BZ[8]
 
-  \opt{serieA}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie A}}
-  \opt{serieB}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber, Serie B}}
+  \opt{Regular}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
   \opt{Nachhol}{\textbf{\Large Nachholprüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
 
   % TODO: make more robust
