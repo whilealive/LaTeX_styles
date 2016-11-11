@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     05.07.2016
+% DATE     11.11.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -31,7 +31,7 @@
 \lohead{BMS Zürich}
 \rohead{\thepage}
 \cofoot{}
-\cohead[]{Musterlösungen Frommewniler \@Thema}
+\cohead[]{Musterlösungen Frommenwiler \@Thema}
 
 % ----------------------------------------------------------------
 % custom commands and environments...
