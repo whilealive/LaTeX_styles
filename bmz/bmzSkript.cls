@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     19.08.2016
+% DATE     21.11.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -46,12 +46,6 @@
 % ----------------------------------------------------------------
 % custom commands and environments...
 % ----------------------------------------------------------------
-% Put chapter pages automatically on the right side even though it's a oneside document.
-% Before a new chapter, put: "\clearpage{\pagestyle{empty}\cleardoublepage}".
-\def\cleardoublepage{%
-  \clearpage\ifodd\c@page\else\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi
-}
-
 % Enlarge \textwidth by 30mm, so that it is centered on a4paper
 \NewEnviron{FullWidth}
 {
@@ -104,10 +98,9 @@
 \NewEnviron{SolPage}
 {
   \clearpage
+  \settasks{before-skip=-2ex,after-item-skip=-1ex}
   \section{Lösungen}
-  \begin{flushleft}
-    \BODY
-  \end{flushleft}
+  \BODY
 }
 
 % ----------------------------------------------------------------
