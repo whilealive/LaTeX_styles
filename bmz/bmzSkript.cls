@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     21.11.2016
+% DATE     28.12.2016
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -78,8 +78,9 @@
 % Aufgabenliste aus Frommenwiler
 \NewEnviron{Frommenwiler}
 {
-  \medskip
+  \SpaceAbove\BZ[1.2]
   \begin{minipage}{\linewidth}
+    \penalty12345% subtrahiere vertikalen Abstand der folgenden Aufg-Umgebung
     \begin{Aufg}
       Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
       \begin{tabularx}{\textwidth}{Xp{12mm}X}
@@ -91,7 +92,7 @@
       \end{tabularx}
     \end{Aufg}
   \end{minipage}
-  \smallskip
+  \smallskip\par\penalty12345
 }
 
 % Lösungsseite (immer letzte Seite pro Kapitel)
