@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     28.12.2016
+% DATE     03.01.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -71,6 +71,7 @@
 
 % Calculator keys
 \newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
+\newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
 
 % Logische Mengen
 \newcommand*{\Logic}[1]{\textsf{\textbf{#1}}}
