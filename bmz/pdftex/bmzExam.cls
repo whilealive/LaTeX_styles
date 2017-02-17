@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     29.10.2016
+% DATE     16.02.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,6 +16,7 @@
 
 % my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
+\RequirePackage{tikzStyle}
 
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}
 \ProcessOptions\relax
@@ -23,7 +24,7 @@
 
 % Gibt an, wo sich die Prüfungsaufgaben befinden
 % \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
-\def\input@path{{$HOME/Documents/Work/BMS-ZH/Pruefungsaufgabensammlung/}}
+\def\input@path{{$HOME/Documents/Work/BMS-ZH/Pruefungsaufgabensammlung/Aufgaben/}}
 
 % header/footer
 \RequirePackage{lastpage}
@@ -71,6 +72,16 @@
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
+
+% Musterlösung pro Aufgabe
+\NewEnviron{ExamLsg}
+{
+  \opt{lsg}{%
+    \BZ[2]
+    \textit{Lösung:}\par
+    \BODY
+  }
+}
 
 % ----------------------------------------------------------------
 % Begin document with...

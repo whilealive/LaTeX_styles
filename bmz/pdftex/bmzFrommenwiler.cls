@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     11.11.2016
+% DATE     16.02.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -18,6 +18,7 @@
 
 % my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
+\RequirePackage{tikzStyle}
 \RequirePackage{pgfplotsStyle}
 \RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
 
