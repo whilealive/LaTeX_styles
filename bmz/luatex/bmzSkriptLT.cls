@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript (LuaLaTeX)
 %
-% DATE     16.02.2017
+% DATE     18.02.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -15,6 +15,7 @@
 
 \RequirePackage{basicDocStyleLT}
 \RequirePackage{tikzStyle}
+\RequirePackage{myNotes}
 \RequirePackage{myBMZ}
 
 % do not try to fill pages with content vertically (needed as it's twoside)

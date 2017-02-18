@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     16.02.2017
+% DATE     18.02.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,6 +16,7 @@
 
 \RequirePackage{basicDocStyleLT}
 \RequirePackage{tikzStyle}
+\RequirePackage{myNotes}
 \RequirePackage{myBMZ}
 
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}

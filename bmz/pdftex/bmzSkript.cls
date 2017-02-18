@@ -16,6 +16,7 @@
 % my math style (loads basicDocumentStyle by default)
 \RequirePackage{basicMathDocStyle}
 \RequirePackage{tikzStyle}
+\RequirePackage{myNotes}
 
 % do not try to fill pages with content vertically (needed as it's twoside)
 \raggedbottom
