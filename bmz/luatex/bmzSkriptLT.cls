@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript (LuaLaTeX)
 %
-% DATE     18.02.2017
+% DATE     08.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -13,7 +13,7 @@
 \LoadClass[10pt,twoside,headings=optiontohead,open=right]{scrreprt}
 \RequirePackage[a4paper,inner=30mm,outer=60mm,top=30mm,bottom=45mm,marginparwidth=40mm]{geometry}  % textwidth=120mm
 
-\RequirePackage{basicDocStyleLT}
+\RequirePackage{basicDocStyleLTKOMA}
 \RequirePackage{tikzStyle}
 \RequirePackage{myNotes}
 \RequirePackage{myBMZ}
@@ -83,7 +83,7 @@
 {
   \SpaceAbove\BZ[1.2]
   \begin{minipage}{\linewidth}
-    \penalty12345% subtrahiere vertikalen Abstand der folgenden Aufg-Umgebung
+    \DoNotAddBlank
     \begin{Aufg}
       Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
       \begin{tabularx}{\textwidth}{Xp{12mm}X}
@@ -95,7 +95,7 @@
       \end{tabularx}
     \end{Aufg}
   \end{minipage}
-  \smallskip\par\penalty12345
+  \smallskip\par\DoNotAddBlank
 }
 
 % Lösungsseite (immer letzte Seite pro Kapitel)

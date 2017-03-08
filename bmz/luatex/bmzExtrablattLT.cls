@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     16.02.2017
+% DATE     08.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,7 +16,7 @@
 \LoadClass[10pt,headings=optiontohead]{scrartcl}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocStyleLT}
+\RequirePackage{basicDocStyleLTKOMA}
 \RequirePackage{myBMZ}
 
 \RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
