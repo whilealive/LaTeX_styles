@@ -3,9 +3,14 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript (LuaLaTeX)
 %
-% DATE     08.03.2017
+% DATE     09.03.2017
 % OWNER    Bischofberger
 % ==================================================================
+% TODO: remove KOMA-Skript options
+%       - optiontohead   (\sectionmark{}?)
+%       - open=right     (?)
+%       - FullWidth      (changepage package)
+%       - header/footer  (fancyhdr)
 
 \ProvidesClass{bmzSkriptLT}
 \NeedsTeXFormat{LaTeX2e}

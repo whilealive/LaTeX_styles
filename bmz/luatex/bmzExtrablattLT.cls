@@ -6,17 +6,17 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     08.03.2017
+% DATE     09.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesClass{bmzExtrablattLT}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[10pt,headings=optiontohead]{scrartcl}
+\LoadClass[10pt]{article}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocStyleLTKOMA}
+\RequirePackage{basicDocStyleLT}
 \RequirePackage{myBMZ}
 
 \RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
@@ -24,11 +24,11 @@
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
 
-% header/footer (KOMA-Script)
-\lohead{\BMZ}
-\rohead{\thepage}
-\cofoot{}
-\cohead[]{\@Titel}
+% header/footer
+\lhead{\BMZ}
+\rhead{\thepage}
+\cfoot{}
+\chead[]{\@Titel}
 
 % ----------------------------------------------------------------
 % custom commands and environments...

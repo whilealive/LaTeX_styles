@@ -6,17 +6,17 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     08.03.2017
+% DATE     09.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesClass{bmzFrommenwilerLT}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[10pt,headings=optiontohead]{scrartcl}
+\LoadClass[10pt]{article}
 \RequirePackage[a4paper,textwidth=160mm,top=30mm,bottom=40mm]{geometry}  % extra wide
 
-\RequirePackage{basicDocStyleLTKOMA}
+\RequirePackage{basicDocStyleLT}
 \RequirePackage{tikzStyle}
 \RequirePackage{pgfplotsStyle}
 \RequirePackage{myBMZ}
@@ -29,11 +29,11 @@
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
 
-% header/footer (KOMA-Script)
-\lohead{\BMZ}
-\rohead{\thepage}
-\cofoot{}
-\cohead[]{Musterlösungen Frommenwiler \@Thema}
+% header/footer
+\lhead{\BMZ}
+\rhead{\thepage}
+\cfoot{}
+\chead[]{Musterlösungen Frommenwiler \@Thema}
 
 % ----------------------------------------------------------------
 % custom commands and environments...

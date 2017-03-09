@@ -4,17 +4,17 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     08.03.2017
+% DATE     09.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesClass{bmzExamLT}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[10pt]{scrreprt}
+\LoadClass[10pt]{report}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocStyleLTKOMA}
+\RequirePackage{basicDocStyleLT}
 \RequirePackage{tikzStyle}
 \RequirePackage{myNotes}
 \RequirePackage{myBMZ}
@@ -23,17 +23,19 @@
 \ProcessOptions\relax
 \RequirePackage{optional}
 
+\RequirePackage{multicol}
+
 % Gibt an, wo sich die Prüfungsaufgaben befinden
 % \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
 \def\input@path{{$HOME/Documents/Work/BMS-ZH/Pruefungsaufgabensammlung/Aufgaben/}}
 
 % header/footer
 \RequirePackage{lastpage}
-\lohead{\BMZ}
-\rohead{Seite \thepage/\pageref{LastPage}}
-\cofoot{}
-\opt{Regular}{\cohead{Prüfung \@ExamNumber}}
-\opt{Nachhol}{\cohead{Nachholprüfung \@ExamNumber}}
+\lhead{\BMZ}
+\rhead{Seite \thepage/\pageref{LastPage}}
+\cfoot{}
+\opt{Regular}{\chead{Prüfung \@ExamNumber}}
+\opt{Nachhol}{\chead{Nachholprüfung \@ExamNumber}}
 
 % ----------------------------------------------------------------
 % custom commands and environments...
