@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     09.03.2017
+% DATE     10.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,7 +16,8 @@
 \LoadClass[10pt]{article}
 \RequirePackage[a4paper,textwidth=160mm,top=30mm,bottom=40mm]{geometry}  % extra wide
 
-\RequirePackage{basicDocStyleLT}
+\RequirePackage{basicLayoutLT}
+\RequirePackage{basicMacrosLT}
 \RequirePackage{tikzStyle}
 \RequirePackage{pgfplotsStyle}
 \RequirePackage{myBMZ}

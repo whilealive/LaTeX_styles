@@ -1,12 +1,32 @@
 % ==================================================================
 % FILE     myBMZ.sty
 % MACHINE  all
-% INFO     implements the \BMS command
+% INFO     common bmz stuff
 %
-% DATE     16.02.2017
+% DATE     10.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{myBMZ}
 
-\newcommand*{\BMZ}{B\kern0.15em M\kern0.13em S Zürich}
+% BMZ
+\newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
+
+% Aufgabenliste aus Frommenwiler (kopiert von bmzSkriptStyle)
+\NewEnviron{Frommenwiler}
+{
+  \vbox{
+    \begin{Aufg}
+      Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
+      \begin{tabularx}{\textwidth}{Xp{12mm}X}
+        \toprule
+        Aufgabe & Seite & Bemerkungen\\
+        \midrule
+        \BODY
+        \bottomrule
+      \end{tabularx}
+    \end{Aufg}
+  }
+}
+
+

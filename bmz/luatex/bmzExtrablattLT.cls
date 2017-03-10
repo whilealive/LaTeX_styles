@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     09.03.2017
+% DATE     10.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,7 +16,8 @@
 \LoadClass[10pt]{article}
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
-\RequirePackage{basicDocStyleLT}
+\RequirePackage{basicLayoutLT}
+\RequirePackage{basicMacrosLT}
 \RequirePackage{myBMZ}
 
 \RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
@@ -42,23 +43,6 @@
     Lagerstrasse 55, 8090 Zürich\\[2ex]
     Bruno Bischofberger
   \end{textblock*}%
-}
-
-% Aufgabenliste aus Frommenwiler (kopiert von bmzSkriptStyle)
-\NewEnviron{Frommenwiler}
-{
-  \vbox{
-    \begin{Aufg}
-      Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par
-      \begin{tabularx}{\textwidth}{Xp{12mm}X}
-        \toprule
-        Aufgabe & Seite & Bemerkungen\\
-        \midrule
-        \BODY
-        \bottomrule
-      \end{tabularx}
-    \end{Aufg}
-  }
 }
 
 % ----------------------------------------------------------------
