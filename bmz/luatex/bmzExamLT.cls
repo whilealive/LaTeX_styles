@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     10.03.2017
+% DATE     15.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -23,8 +23,6 @@
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}
 \ProcessOptions\relax
 \RequirePackage{optional}
-
-\RequirePackage{multicol}
 
 % Gibt an, wo sich die Prüfungsaufgaben befinden
 % \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
