@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     16.03.2017
+% DATE     20.03.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -27,4 +27,22 @@
   \end{Aufg}
 }
 
+% HP Prime environment
+\NewEnviron{TR}[1][Titel...]
+{
+  \begin{minipage}[c]{\linewidth}
+    \vspace{-1ex}  % remove vertical space above frame added by \marginnote
+    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]  % alternativ: TI-Nspire.png
+    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+      \vspace{-2ex}  % remove vertical space inside frame added by \marginnote
+      \subsubsection{TR: #1}
+      \BODY
+    \end{mdframed}
+  \end{minipage}%
+  \BZ
+}
+
+% Calculator keys
+\newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
+\newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
 
