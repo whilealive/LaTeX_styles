@@ -3,11 +3,13 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     20.03.2017
+% DATE     10.04.2017
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{myBMZ}
+
+\RequirePackage{basicMacrosLT}
 
 % BMZ
 \newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
@@ -17,6 +19,7 @@
 {
   \begin{Aufg}
     Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par\nopagebreak
+    \vskip .5ex
     \begin{tabularx}{\textwidth}{Xp{12mm}X}
       \toprule
       Aufgabe & Seite & Bemerkungen\\
@@ -39,7 +42,7 @@
       \BODY
     \end{mdframed}
   \end{minipage}%
-  \BZ
+  \SpaceBelow
 }
 
 % Calculator keys
