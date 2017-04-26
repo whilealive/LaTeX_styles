@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     10.04.2017
+% DATE     25.04.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -31,16 +31,17 @@
 }
 
 % HP Prime environment
-\NewEnviron{TR}[1][Titel...]
-{
-  \begin{minipage}[c]{\linewidth}
-    \vspace{-1ex}  % remove vertical space above frame added by \marginnote
-    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]  % alternativ: TI-Nspire.png
+\RequirePackage{marginnote}
+\NewDocumentEnvironment{TR}{ O{} }
+{%
+  \par\SpaceAbove\BZ
+  \begin{minipage}[t]{\linewidth}
+    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]
     \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-      \vspace{-2ex}  % remove vertical space inside frame added by \marginnote
-      \subsubsection{TR: #1}
-      \BODY
-    \end{mdframed}
+      {\bfseries\sffamily TR: #1}\par
+}{%
+    \end{mdframed}%
+    \vskip 0pt  % This is a hack, since "skipbelow" of mdframed is broken.
   \end{minipage}%
   \SpaceBelow
 }
