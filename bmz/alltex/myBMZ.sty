@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     25.04.2017
+% DATE     27.04.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -14,19 +14,23 @@
 % BMZ
 \newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
 
-% Aufgabenliste aus Frommenwiler (kopiert von bmzSkriptStyle)
-\NewEnviron{Frommenwiler}
-{
+% Frommenwiler Aufgabenliste
+% Muss hier bewusst ohne tabularx implementiert werden (tabularx würde environ package 
+% voraussetzen). Die Kolonnenbreiten werden vorab berechnet.
+\newlength\FColWidth
+\setlength\FColWidth{\dimexpr(\textwidth-12mm)/2-3\tabcolsep\relax}
+\NewDocumentEnvironment{Frommenwiler}{}
+{%
   \begin{Aufg}
     Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par\nopagebreak
     \vskip .5ex
-    \begin{tabularx}{\textwidth}{Xp{12mm}X}
+      \begin{tabular}{p{\FColWidth}p{12mm}p{\FColWidth}}
       \toprule
       Aufgabe & Seite & Bemerkungen\\
       \midrule
-      \BODY
+}{%
       \bottomrule
-    \end{tabularx}
+    \end{tabular}
   \end{Aufg}
 }
 
