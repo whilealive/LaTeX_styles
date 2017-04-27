@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     15.03.2017
+% DATE     27.04.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -76,11 +76,14 @@
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
 
 % Musterlösung pro Aufgabe
+% Note: environ package needed to make an environment out of a command (vim math syntax 
+% highlighting within curly brackets is broken...)
+\RequirePackage{environ}
 \NewEnviron{ExamLsg}
 {
   \opt{lsg}{%
     \BZ[2]
-    \textit{Lösung:}\par
+    \textit{Lösung:}\\[1ex]
     \BODY
   }
 }
