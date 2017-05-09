@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     08.04.2017
+% DATE     07.05.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -51,7 +51,7 @@
 
 % units
 \RequirePackage{siunitx}
-\sisetup{per-mode=symbol}
+\sisetup{per-mode=symbol,exponent-product=\cdot}
 
 \RequirePackage{basicMacrosLT}
 \RequirePackage{tikzStyle}
