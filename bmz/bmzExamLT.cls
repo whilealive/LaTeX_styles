@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     27.04.2017
+% DATE     23.05.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -83,7 +83,8 @@
 {
   \opt{lsg}{%
     \BZ[2]
-    \textit{Lösung:}\\[1ex]
+    \textit{Lösung:}
+    \BZ[.5]
     \BODY
   }
 }
