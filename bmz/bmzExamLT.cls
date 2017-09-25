@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     24.07.2017
+% DATE     21.09.2017
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -26,7 +26,10 @@
 
 % Gibt an, wo sich die Prüfungsaufgaben befinden
 % \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
-\def\input@path{{$HOME/Documents/Work/BMS-ZH/Unterricht/Prüfungsaufgabensammlung/Aufgaben/}}
+\def\input@path{%
+{$HOME/Documents/Work/BMS-ZH/Unterricht/Prüfungsaufgabensammlung/TALS/TALS-Aufgaben/}%
+{$HOME/Documents/Work/BMS-ZH/Unterricht/Prüfungsaufgabensammlung/DL/DL-Aufgaben/}%
+}
 
 % header/footer
 \RequirePackage{lastpage}
@@ -71,6 +74,9 @@
 }{%
   \par\addvspace{2em}%
 }
+
+% Punktanzahl pro Teilaufgabe, rechtsbündig
+\newcommand{\Pkt}[1]{\hfill [#1 Pkt]}
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
