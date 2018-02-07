@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     04.11.2017
+% DATE     07.02.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -25,8 +25,8 @@
 \RequirePackage{optional}
 
 % Pfadangabe der Prüfungsaufgabensammlung
-\newcommand*{\PathTALS}{$HOME/Documents/Work/BMS-ZH/Unterricht/Prüfungsaufgabensammlung/TALS/TALS-Aufgaben/}
-\newcommand*{\PathDL}{$HOME/Documents/Work/BMS-ZH/Unterricht/Prüfungsaufgabensammlung/DL/DL-Aufgaben/}
+\newcommand*{\PathTALS}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/TALS/TALS-Aufgaben/}
+\newcommand*{\PathDL}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/DL/DL-Aufgaben/}
 
 \def\input@path{{\PathTALS}{\PathDL}}  % .tex-input files
 \graphicspath{{\PathTALS}{\PathDL}}    % Scans usw.
