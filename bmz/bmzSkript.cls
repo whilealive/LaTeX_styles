@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     documentclass für TALS Skript
 %
-% DATE     07.05.2017
+% DATE     25.04.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -78,10 +78,6 @@
 \cehead[\leftmark]{\leftmark}
 \rohead[]{\rightmark}
 \rehead[]{\rightmark}
-
-% change globally to ]a,b[ intervalls here...
-\RequirePackage{interval}
-\intervalconfig{soft open fences, separator symbol={;}}
 
 \RequirePackage{multirow}
 

@@ -3,13 +3,17 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     27.04.2017
+% DATE     25.04.2018
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{myBMZ}
 
 \RequirePackage{basicMacrosLT}
+
+% change globally to ]a,b[ intervalls here...
+\RequirePackage{interval}
+\intervalconfig{soft open fences, separator symbol={;}}
 
 % BMZ
 \newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
