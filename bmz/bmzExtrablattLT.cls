@@ -6,7 +6,7 @@
 %          \documentclass{bmzExtrablatt}
 %          \SetTitel{EigenerTitel hier}
 %
-% DATE     25.04.2018
+% DATE     03.07.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -32,6 +32,21 @@
 \def\@Titel{Titel}
 \newcommand*{\SetTitel}[1]{\def\@Titel{#1}}
 
+% Chapter
+\newif\if@haschapter
+\@haschapterfalse
+\newcommand*{\SetChapter}[1]{\def\@Chapter{#1}\@haschaptertrue}
+
+% Adressblock
+\RequirePackage[absolute]{textpos}
+\newcommand*{\Adressblock}{%
+  \begin{textblock*}{60mm}(35mm,18.75mm)
+    Berufsmaturitätsschule Zürich\\
+    Lagerstrasse 55, 8090 Zürich\\[2ex]
+    Bruno Bischofberger
+  \end{textblock*}%
+}
+
 % header/footer
 \lhead{\BMZ}
 \rhead{\thepage}
@@ -39,23 +54,20 @@
 \chead[]{\@Titel}
 
 % ----------------------------------------------------------------
-% custom commands and environments...
+% page starts here
 % ----------------------------------------------------------------
 \if@notitlepage
   % leave empty
 \else
-  \RequirePackage[absolute]{textpos}
-  \newcommand*{\Adressblock}{%
-    \begin{textblock*}{60mm}(35mm,18.75mm)
-      Berufsmaturitätsschule Zürich\\
-      Lagerstrasse 55, 8090 Zürich\\[2ex]
-      Bruno Bischofberger
-    \end{textblock*}%
-  }
   \AtBeginDocument{%
     \thispagestyle{empty}%
     \Adressblock
     \vspace*{22mm}%
+    \if@haschapter
+      \vspace*{4mm}%
+      \@Chapter
+      \vspace*{-2\baselineskip}
+    \fi
     \section{\@Titel}%
   }
 \fi
