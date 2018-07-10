@@ -1,16 +1,18 @@
 % ==================================================================
-% FILE     bmzExtrablattLT.cls
+% FILE     bmzTheorieblattLT.cls
 % MACHINE  all
-% INFO     documentclass für BMZ Extrablätter (LuaLaTeX)
+% INFO     documentclass für BMZ Theorieblätter (LuaLaTeX)
 %          Preamble (nur zwei Zeilen):
-%          \documentclass{bmzExtrablatt}
-%          \SetTitel{EigenerTitel hier}
+
+%          \documentclass{bmzTheorieblattLT}
+%          \SetChapter{Kapitel hier}
+%          \SetTitel{Titel hier}
 %
-% DATE     03.07.2018
+% DATE     09.07.2018
 % OWNER    Bischofberger
 % ==================================================================
 
-\ProvidesClass{bmzExtrablattLT}
+\ProvidesClass{bmzTheorieblattLT}
 \NeedsTeXFormat{LaTeX2e}
 
 \LoadClass[10pt]{article}
@@ -20,10 +22,18 @@
 \RequirePackage{basicMacrosLT}
 \RequirePackage{myBMZ}
 
-\newif\if@notitlepage
-\@notitlepagefalse
+% class options:
+% --------------
+% "notitlepage" - skip document title
+\newif\if@notitlepage\@notitlepagefalse
 \DeclareOption{notitlepage}{\@notitlepagetrue}
+
+% "cleartoleftpage" - add an extra empty page if last page is even numbered
+\newif\if@cleartoleftpage\@cleartoleftpagefalse
+\DeclareOption{cleartoleftpage}{\@cleartoleftpagetrue}
+
 \ProcessOptions\relax
+% --------------
 
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
@@ -57,7 +67,7 @@
 % page starts here
 % ----------------------------------------------------------------
 \if@notitlepage
-  % leave empty
+  % skip document title
 \else
   \AtBeginDocument{%
     \thispagestyle{empty}%
@@ -70,4 +80,8 @@
     \fi
     \section{\@Titel}%
   }
+\fi
+
+\if@cleartoleftpage
+  \AtEndDocument{\cleartoleftpage}
 \fi
