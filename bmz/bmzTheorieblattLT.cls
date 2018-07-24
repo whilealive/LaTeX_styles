@@ -8,15 +8,15 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     09.07.2018
+% DATE     18.07.2018
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesClass{bmzTheorieblattLT}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[10pt]{article}
-\RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
+\LoadClass[10pt,twoside]{article}
+\RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm]{geometry}
 
 \RequirePackage{basicLayoutLT}
 \RequirePackage{basicMacrosLT}
@@ -58,10 +58,12 @@
 }
 
 % header/footer
-\lhead{\BMZ}
-\rhead{\thepage}
-\cfoot{}
-\chead[]{\@Titel}
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO,RE]{\BMZ}
+\fancyhead[CO,CE]{\@Titel}
+
 
 % ----------------------------------------------------------------
 % page starts here
