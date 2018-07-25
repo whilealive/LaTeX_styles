@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     25.04.2018
+% DATE     25.07.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -23,12 +23,12 @@
 % voraussetzen). Die Kolonnenbreiten werden vorab berechnet.
 \newlength\FColWidth
 \setlength\FColWidth{\dimexpr(\textwidth-12mm)/2-3\tabcolsep\relax}
-\NewDocumentEnvironment{Frommenwiler}{}
+\NewDocumentEnvironment{Frommenwiler}{ O{Lösen Sie die folgenden Aufgaben aus Frommenwiler.} }
 {%
   \begin{Aufg}
-    Lösen Sie die folgenden Aufgaben aus Frommenwiler.\par\nopagebreak
+    #1\par\nopagebreak
     \vskip .5ex
-      \begin{tabular}{p{\FColWidth}p{12mm}p{\FColWidth}}
+    \begin{tabular}{p{\FColWidth}p{12mm}p{\FColWidth}}
       \toprule
       Aufgabe & Seite & Bemerkungen\\
       \midrule
