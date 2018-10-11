@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     15.04.2018
+% DATE     11.10.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -114,14 +114,14 @@
   \ifnum\@Teil>0{\BZ\textbf{\Large Teil \@Teil}}\fi
 
   \BZ
-  \renewcommand*{\arraystretch}{1.6}
+  {\renewcommand*{\arraystretch}{1.6}%
   \begin{tabularx}{\linewidth}{|X|c|}
     \hline
     Name & \@Class\\
     \hline
     \multicolumn{2}{|l|}{Datum}\\
     \hline
-  \end{tabularx}
+  \end{tabularx}}
   \BZ
 
   \@ExamRules
