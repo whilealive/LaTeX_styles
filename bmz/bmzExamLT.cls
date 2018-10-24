@@ -21,9 +21,14 @@
 \RequirePackage{myNotes}
 \RequirePackage{myBMZ}
 
-\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{optional}}
+% class options:
+% --------------
+% "lsg" - Lösungen
+\newif\if@lsg\@lsgfalse
+\DeclareOption{lsg}{\@lsgtrue}
+
 \ProcessOptions\relax
-\RequirePackage{optional}
+% --------------
 
 % Pfadangabe der Prüfungsaufgabensammlung
 \newcommand*{\PathTALS}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/01-TALS/TALS-Aufgaben/}
@@ -37,8 +42,7 @@
 \lhead{\BMZ}
 \rhead{Seite \thepage/\pageref{LastPage}}
 \cfoot{}
-\opt{Regular}{\chead{Prüfung \@ExamNumber}}
-\opt{Nachhol}{\chead{Nachholprüfung \@ExamNumber}}
+\chead{Prüfung \@ExamNumber}
 
 % ----------------------------------------------------------------
 % custom commands and environments...
@@ -88,13 +92,14 @@
 \RequirePackage{environ}
 \NewEnviron{ExamLsg}
 {
-  \opt{lsg}{%
+  \if@lsg
     \BZ[2]
     \textit{Lösung:}
     \BZ[.5]
     \BODY
-  }
+  \fi
 }
+
 
 % ----------------------------------------------------------------
 % Begin document with...
@@ -108,8 +113,7 @@
   Bruno Bischofberger
   \BZ[8]
 
-  \opt{Regular}{\textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
-  \opt{Nachhol}{\textbf{\Large Nachholprüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}}
+  \textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}
 
   % TODO: make more robust
   \ifnum\@Teil>0{\BZ\textbf{\Large Teil \@Teil}}\fi
