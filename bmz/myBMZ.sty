@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     25.07.2018
+% DATE     11.11.2018
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -17,6 +17,31 @@
 
 % BMZ
 \newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
+
+% include all BMZ-Theorie subfolders (for pdf inclusion)
+\def\@TheoriePath{$HOME/Documents/Work/BMS-ZH/01-Unterricht/02-Theorie}
+\newcommand*{\includeBMZTheorieGraphicspath}{%
+  \graphicspath{%
+      {\@TheoriePath/01-Arithmetik-Algebra/01-Algebra/}%
+      {\@TheoriePath/01-Arithmetik-Algebra/02-Potenzen/}%
+      {\@TheoriePath/02-Gleichungen/01-Lineare-Gleichungen/}%
+      {\@TheoriePath/02-Gleichungen/02-Lineare-Gleichungssyssteme/}%
+      {\@TheoriePath/02-Gleichungen/03-Quadratische-Gleichungen/}%
+      {\@TheoriePath/02-Gleichungen/04-Nichtlineare-Gleichungen/}%
+      {\@TheoriePath/03-Funktionen/01-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/02-Lineare-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/03-Quadratische-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/04-Potenzfunktionen/}%
+      {\@TheoriePath/03-Funktionen/05-Polynomfunktionen/}%
+      {\@TheoriePath/03-Funktionen/06-Exponentialfunktionen/}%
+      {\@TheoriePath/05-Geometrie/01-PlanimetrieI/}%
+      {\@TheoriePath/05-Geometrie/02-PlanimetrieII/}%
+      {\@TheoriePath/05-Geometrie/03-TrigonometrieI/}%
+      {\@TheoriePath/05-Geometrie/04-TrigonometrieII/}%
+      {\@TheoriePath/05-Geometrie/05-Stereometrie/}%
+      {\@TheoriePath/05-Geometrie/06-Vektorgeometrie/}%
+    }
+}
 
 % Frommenwiler Aufgabenliste
 % Muss hier bewusst ohne tabularx implementiert werden (tabularx würde environ package 
