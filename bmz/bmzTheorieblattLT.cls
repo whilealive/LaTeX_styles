@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     18.07.2018
+% DATE     13.01.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -47,16 +47,6 @@
 \@haschapterfalse
 \newcommand*{\SetChapter}[1]{\def\@Chapter{#1}\@haschaptertrue}
 
-% Adressblock
-\RequirePackage[absolute]{textpos}
-\newcommand*{\Adressblock}{%
-  \begin{textblock*}{60mm}(35mm,18.75mm)
-    Berufsmaturitätsschule Zürich\\
-    Lagerstrasse 55, 8090 Zürich\\[2ex]
-    Bruno Bischofberger
-  \end{textblock*}%
-}
-
 % header/footer
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
@@ -73,7 +63,7 @@
 \else
   \AtBeginDocument{%
     \thispagestyle{empty}%
-    \Adressblock
+    \Adressblock{35mm}{18.75mm}%
     \vspace*{22mm}%
     \if@haschapter
       \vspace*{4mm}%

@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     23.03.2017
+% DATE     14.01.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -19,13 +19,12 @@
 \RequirePackage{basicLayoutLT}
 \RequirePackage{basicMacrosLT}
 \RequirePackage{tikzStyle}
+\RequirePackage{tikz3dStyle}
 \RequirePackage{pgfplotsStyle}
 \RequirePackage{myBMZ}
 
 % images
 \graphicspath{{Loesungen/}}
-
-\RequirePackage[absolute]{textpos}  % absolute positioning of text blocks
 
 % globaler Ordner der einzelnen Lösungen
 \newcommand*{\Dir}{Loesungen/}
@@ -45,20 +44,12 @@
 \def\@Thema{Thema}
 \newcommand*{\SetThema}[1]{\def\@Thema{#1}}
 
-\newcommand*{\Adressblock}{%
-  \begin{textblock*}{60mm}(25mm,18.75mm)
-    Berufsmaturitätsschule Zürich\\
-    Lagerstrasse 55, 8090 Zürich\\[2ex]
-    Bruno Bischofberger
-  \end{textblock*}%
-}
-
 % ----------------------------------------------------------------
 % Begin document with...
 % ----------------------------------------------------------------
 \AtBeginDocument{%
   \thispagestyle{empty}%
-  \Adressblock
+  \Adressblock{25mm}{18.75mm}%
   \vspace*{22mm}%
   \section{Musterlösungen Frommenwiler \@Thema}%
 }

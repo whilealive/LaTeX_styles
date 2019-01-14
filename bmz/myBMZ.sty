@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     11.11.2018
+% DATE     13.01.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -17,6 +17,16 @@
 
 % BMZ
 \newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
+
+% Adressblock #1:hpos, #2:vpos
+\RequirePackage[absolute]{textpos}
+\newcommand*{\Adressblock}[2]{%
+  \begin{textblock*}{60mm}(#1,#2)
+    Berufsmaturitätsschule Zürich\\
+    Lagerstrasse 55, 8090 Zürich\\[2ex]
+    Bruno Bischofberger
+  \end{textblock*}%
+}
 
 % include all BMZ-Theorie subfolders (for pdf inclusion)
 \def\@TheoriePath{$HOME/Documents/Work/BMS-ZH/01-Unterricht/02-Theorie}
@@ -64,20 +74,20 @@
 }
 
 % HP Prime environment
-\RequirePackage{marginnote}
-\NewDocumentEnvironment{TR}{ O{} }
-{%
-  \par\SpaceAbove\BZ
-  \begin{minipage}[t]{\linewidth}
-    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]
-    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-      {\bfseries\sffamily TR: #1}\par
-}{%
-    \end{mdframed}%
-    \vskip 0pt  % This is a hack, since "skipbelow" of mdframed is broken.
-  \end{minipage}%
-  \SpaceBelow
-}
+%\RequirePackage{marginnote}
+%\NewDocumentEnvironment{TR}{ O{} }
+%{%
+%  \par\SpaceAbove\BZ
+%  \begin{minipage}[t]{\linewidth}
+%    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]
+%    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
+%      {\bfseries\sffamily TR: #1}\par
+%}{%
+%    \end{mdframed}%
+%    \vskip 0pt  % This is a hack, since "skipbelow" of mdframed is broken.
+%  \end{minipage}%
+%  \SpaceBelow
+%}
 
 % Calculator keys
 \newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
