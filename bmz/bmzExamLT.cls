@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     17.01.2019
+% DATE     03.05.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -98,6 +98,8 @@
     \textit{Lösung:}
     \BZ[.5]
     \BODY
+  \else
+    \FillNotes
   \fi
 }
 
