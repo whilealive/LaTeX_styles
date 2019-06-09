@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     25.05.2019
+% DATE     09.06.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -91,8 +91,16 @@
 % Musterlösung pro Aufgabe
 % Note: environ package needed to make an environment out of a command (vim math syntax 
 % highlighting within curly brackets is broken...)
+% optional argument: "printNotes=false"
 \RequirePackage{environ}
-\NewEnviron{ExamLsg}
+\newif\iffillUpWithNotes
+\pgfkeys
+{%
+  examLsg/.is family, /examLsg,%
+  default/.style={printNotes=false},%
+  printNotes/.is if=fillUpWithNotes
+}
+\NewEnviron{ExamLsg}[1][printNotes]
 {
   \if@lsg
     \BZ[2]
@@ -100,7 +108,8 @@
     \BZ[.5]
     \BODY
   \else
-    \FillNotes
+    \pgfkeys{/examLsg, default, #1}%
+    \iffillUpWithNotes\FillNotes\fi
   \fi
 }
 
