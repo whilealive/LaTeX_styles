@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     09.06.2019
+% DATE     12.06.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -105,13 +105,23 @@
   \if@lsg
     \BZ[2]
     \textit{Lösung:}\nopagebreak
-    \BZ[.5]
+    \hBZ
     \BODY
   \else
     \pgfkeys{/examLsg, default, #1}%
     \iffillUpWithNotes\FillNotes\fi
   \fi
 }
+
+\newcommand*{\includeSolution}[1]
+{%
+  \IfFileExists{./\Lsg#1}{%
+    \includegraphics[width=\linewidth]{#1}\par
+  }{%
+    \textcolor{red}{(Noch) keine Lösungen vorhanden.}
+  }
+}
+  
 
 
 % ----------------------------------------------------------------
