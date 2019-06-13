@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     12.06.2019
+% DATE     13.06.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -32,12 +32,15 @@
 % --------------
 
 % Pfadangabe der Prüfungsaufgabensammlung
-\newcommand*{\PathTALS}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/01-TALS/TALS-Aufgaben/}
-\newcommand*{\PathDLGESO}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/02-DL-GESO/DL-GESO-Aufgaben/}
+\newcommand*{\Path}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/}
+\newcommand*{\PathTALS}{01-TALS/TALS-Aufgaben/}
+\newcommand*{\PathDLGESO}{02-DL-GESO/DL-GESO-Aufgaben/}
 \newcommand*{\Lsg}{Lsg/}
 
-\def\input@path{{\PathTALS}{\PathDLGESO}}  % .tex-input files
-\graphicspath{{\PathTALS}{\PathTALS\Lsg}{\PathDLGESO}{\PathDLGESO\Lsg}}  % Scans usw.
+% .tex-input Dokumente, Pfade für \IfFileExists{}{}{} usw.
+\def\input@path{{\Path\PathTALS}{\Path\PathTALS\Lsg}{\Path\PathDLGESO}{\Path\PathDLGESO\Lsg}}
+% Pfade für \includegraphics{}
+\graphicspath{{\Path\PathTALS}{\Path\PathTALS\Lsg}{\Path\PathDLGESO}{\Path\PathDLGESO\Lsg}}
 
 % header/footer
 \RequirePackage{lastpage}
@@ -115,7 +118,7 @@
 
 \newcommand*{\includeSolution}[1]
 {%
-  \IfFileExists{./\Lsg#1}{%
+  \IfFileExists{#1}{%
     \includegraphics[width=\linewidth]{#1}\par
   }{%
     \textcolor{red}{(Noch) keine Lösungen vorhanden.}
