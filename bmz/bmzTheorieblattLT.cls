@@ -32,6 +32,10 @@
 \newif\if@cleartoleftpage\@cleartoleftpagefalse
 \DeclareOption{cleartoleftpage}{\@cleartoleftpagetrue}
 
+% "emptytitlepage" - empty header
+\newif\if@emptytitlepage\@emptytitlepagefalse
+\DeclareOption{emptytitlepage}{\@emptytitlepagetrue}
+
 \ProcessOptions\relax
 % --------------
 
@@ -54,24 +58,47 @@
 \fancyhead[LO,RE]{\BMZ}
 \fancyhead[CO,CE]{\@Titel}
 
+% full titlepage header with name, school address etc.
+\newcommand*{\@Fulltitle}{%
+  \AtBeginDocument{%
+    \thispagestyle{empty}%
+    \Adressblock{35mm}{18.75mm}%
+    \vspace*{22mm}%
+    \if@haschapter%
+      \vspace*{4mm}%
+      \@Chapter%
+      \vspace*{-2\baselineskip}%
+    \fi
+    \section{\@Titel}%
+  }%
+}
+
+% empty titlepage header
+\newcommand*{\@Emptytitle}{%
+  \AtBeginDocument{%
+    \thispagestyle{empty}%
+    \vspace*{20mm}%
+    \if@haschapter%
+      \vspace*{4mm}%
+      \@Chapter%
+      \vspace*{-2\baselineskip}%
+    \fi
+    \section{\@Titel}%
+  }%
+}
+
 
 % ----------------------------------------------------------------
 % page starts here
 % ----------------------------------------------------------------
 \if@notitlepage
   % skip document title
-\else
-  \AtBeginDocument{%
-    \thispagestyle{empty}%
-    \Adressblock{35mm}{18.75mm}%
-    \vspace*{22mm}%
-    \if@haschapter
-      \vspace*{4mm}%
-      \@Chapter
-      \vspace*{-2\baselineskip}
+  \else
+    \if@emptytitlepage
+      \@Emptytitle
+    \else
+      \@Fulltitle
     \fi
-    \section{\@Titel}%
-  }
 \fi
 
 \if@cleartoleftpage
