@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     13.01.2019
+% DATE     23.08.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -22,85 +22,56 @@
 \RequirePackage{basicMacrosLT}
 \RequirePackage{myBMZ}
 
-% class options:
-% --------------
-% "notitlepage" - skip document title
-\newif\if@notitlepage\@notitlepagefalse
-\DeclareOption{notitlepage}{\@notitlepagetrue}
-
-% "cleartoleftpage" - add an extra empty page if last page is even numbered
-\newif\if@cleartoleftpage\@cleartoleftpagefalse
-\DeclareOption{cleartoleftpage}{\@cleartoleftpagetrue}
-
-% "emptytitlepage" - empty header
-\newif\if@emptytitlepage\@emptytitlepagefalse
-\DeclareOption{emptytitlepage}{\@emptytitlepagetrue}
-
-\ProcessOptions\relax
-% --------------
-
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
-
-% Title
-\def\@Titel{Titel}
-\newcommand*{\SetTitel}[1]{\def\@Titel{#1}}
-
-% Chapter
-\newif\if@haschapter
-\@haschapterfalse
-\newcommand*{\SetChapter}[1]{\def\@Chapter{#1}\@haschaptertrue}
 
 % header/footer
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO,RE]{\BMZ}
-\fancyhead[CO,CE]{\@Titel}
+\fancyhead[CO,CE]{\nouppercase{\leftmark}}
 
-% full titlepage header with name, school address etc.
-\newcommand*{\@Fulltitle}{%
-  \AtBeginDocument{%
-    \thispagestyle{empty}%
+% ----------
+% document title command
+\ExplSyntaxOn
+\keys_define:nn{bmz/title}
+{%
+  chapter       .tl_set:N = \l__bmz_Chapter_tl,
+  addressblock  .bool_set:N = \l__bmz_Addressblock_tl,
+  chapter       .value_required:n = true,
+  addressblock  .value_required:n = true,
+  chapter       .initial:n = {},
+  addressblock  .initial:n = {true},
+}
+
+\NewDocumentCommand{\SetTitle}{ o m }
+{%
+  \IfNoValueF{#1}{\keys_set:nn{bmz/title}{#1}}%
+  \thispagestyle{empty}%
+
+  \bool_if:NTF{\l__bmz_Addressblock_tl}%
+  {%
     \Adressblock{35mm}{18.75mm}%
     \vspace*{22mm}%
-    \if@haschapter%
-      \vspace*{4mm}%
-      \@Chapter%
-      \vspace*{-2\baselineskip}%
-    \fi
-    \section{\@Titel}%
   }%
-}
-
-% empty titlepage header
-\newcommand*{\@Emptytitle}{%
-  \AtBeginDocument{%
-    \thispagestyle{empty}%
-    \vspace*{20mm}%
-    \if@haschapter%
-      \vspace*{4mm}%
-      \@Chapter%
-      \vspace*{-2\baselineskip}%
-    \fi
-    \section{\@Titel}%
+  {%
+    \vspace*{18.4mm}%
   }%
-}
-
+  \tl_if_empty:NF{\l__bmz_Chapter_tl}%
+  {%
+    \vspace*{4.3mm}%
+    \bool_if:NF{\l__bmz_Addressblock_tl}{\vspace*{1.2mm}}  % ugly hack here...
+    \l__bmz_Chapter_tl%
+    \vspace*{-2.1\baselineskip}%
+  }%
+  \section{#2}%
+}%
+\ExplSyntaxOff
+% ----------
 
 % ----------------------------------------------------------------
 % page starts here
 % ----------------------------------------------------------------
-\if@notitlepage
-  % skip document title
-  \else
-    \if@emptytitlepage
-      \@Emptytitle
-    \else
-      \@Fulltitle
-    \fi
-\fi
 
-\if@cleartoleftpage
-  \AtEndDocument{\cleartoleftpage}
-\fi
+% ...
