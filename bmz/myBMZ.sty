@@ -3,7 +3,7 @@
 % MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     13.01.2019
+% DATE     04.09.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -60,17 +60,17 @@
 \setlength\FColWidth{\dimexpr(\textwidth-12mm)/2-3\tabcolsep\relax}
 \NewDocumentEnvironment{Frommenwiler}{ O{Lösen Sie die folgenden Aufgaben aus Frommenwiler.} }
 {%
-  \begin{Aufg}
-    #1\par\nopagebreak
-    \vskip .5ex
-    \begin{tabular}{p{\FColWidth}p{12mm}p{\FColWidth}}
-      \toprule
-      Aufgabe & Seite & Bemerkungen\\
-      \midrule
+  \SpaceAbove
+  \BZ\noindent#1\par\nopagebreak
+  \vskip .5ex
+  \begin{tabular}{@{}p{\FColWidth}p{12mm}p{\FColWidth}@{}}
+    \toprule
+    Aufgabe & Seite & Bemerkungen\\
+    \midrule
 }{%
-      \bottomrule
-    \end{tabular}
-  \end{Aufg}
+    \bottomrule
+  \end{tabular}
+  \SpaceBelow
 }
 
 % HP Prime environment
