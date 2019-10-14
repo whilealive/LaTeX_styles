@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     13.06.2019
+% DATE     14.10.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -28,6 +28,11 @@
 \newif\if@lsg\@lsgfalse
 \DeclareOption{lsg}{\@lsgtrue}
 
+% "twopart" - zweiteilig
+\newif\if@twopart\@twopartfalse
+\DeclareOption{twopart}{\@twoparttrue}
+
+
 \ProcessOptions\relax
 % --------------
 
@@ -47,7 +52,11 @@
 \lhead{\BMZ}
 \rhead{Seite \thepage/\pageref{LastPage}}
 \cfoot{}
-\chead{Prüfung \@ExamNumber}
+\if@twopart
+  \chead{Prüfung \@ExamNumber\ -- Teil \@Teil}
+\else
+  \chead{Prüfung \@ExamNumber}
+\fi
 
 % ----------------------------------------------------------------
 % custom commands and environments...
@@ -141,8 +150,7 @@
 
   \textbf{\Large Prüfung \@ExamNumber, Mathematik, Semester \@SemesterNumber}
 
-  % TODO: make more robust
-  \ifnum\@Teil>0{\BZ\textbf{\Large Teil \@Teil}}\fi
+  \if@twopart{\BZ\textbf{\Large Teil \@Teil}}\fi
 
   \BZ
   {\renewcommand*{\arraystretch}{1.6}%
