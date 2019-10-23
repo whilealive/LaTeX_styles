@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     23.08.2019
+% DATE     23.10.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,11 +16,10 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \LoadClass[10pt,twoside]{article}
-\RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm]{geometry}
+\RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm,footskip=15mm]{geometry}
 
 \RequirePackage{basicLayoutLT}
-\RequirePackage{basicMacrosLT}
-\RequirePackage{myBMZ}
+\RequirePackage{myBMZ}  % loads basicMacrosLT
 
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
@@ -28,9 +27,10 @@
 % header/footer
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
-\fancyhead[RO,LE]{\thepage}
-\fancyhead[LO,RE]{\BMZ}
+\fancyhead[RO,RE]{B. Bischofberger}
+\fancyhead[LO,LE]{\BMZ}
 \fancyhead[CO,CE]{\nouppercase{\leftmark}}
+\fancyfoot[CO,CE]{\thepage}
 
 % ----------
 % document title command
@@ -48,10 +48,10 @@
 \NewDocumentCommand{\SetTitle}{ o m }
 {%
   \IfNoValueF{#1}{\keys_set:nn{bmz/title}{#1}}%
-  \thispagestyle{empty}%
 
   \bool_if:NTF{\l__bmz_Addressblock_tl}%
   {%
+    \thispagestyle{empty}%
     \Adressblock{35mm}{18.75mm}%
     \vspace*{22mm}%
   }%
