@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     14.10.2019
+% DATE     23.10.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -15,12 +15,11 @@
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}
 
 \RequirePackage{basicLayoutLT}
-\RequirePackage{basicMacrosLT}
+\RequirePackage{myBMZ}  % loads basicMacrosLT
 \RequirePackage{tikzStyle}
 \RequirePackage{tikz3dStyle}
 \RequirePackage{pgfplotsStyle}
 \RequirePackage{myNotes}
-\RequirePackage{myBMZ}
 
 % class options:
 % --------------
