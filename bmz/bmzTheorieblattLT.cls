@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     23.10.2019
+% DATE     25.10.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -24,13 +24,22 @@
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
 
-% header/footer
-\fancyhead{} % clear all header fields
-\fancyfoot{} % clear all footer fields
+% header/footer:
+% settings for pagestyle "fancy"
+\fancyhf{}  % clear all fields
 \fancyhead[RO,RE]{B. Bischofberger}
 \fancyhead[LO,LE]{\BMZ}
 \fancyhead[CO,CE]{\nouppercase{\leftmark}}
 \fancyfoot[CO,CE]{\thepage}
+
+% settings for pagestyle "FirstPage"
+\fancypagestyle{FirstPage}%
+{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[CO,CE]{\thepage}%
+}
+
 
 % ----------
 % document title command
@@ -51,7 +60,7 @@
 
   \bool_if:NTF{\l__bmz_Addressblock_tl}%
   {%
-    \thispagestyle{empty}%
+    \thispagestyle{FirstPage}%
     \Adressblock{35mm}{18.75mm}%
     \vspace*{22mm}%
   }%
