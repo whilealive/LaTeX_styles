@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     25.10.2019
+% DATE     06.11.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -16,7 +16,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \LoadClass[10pt,twoside]{article}
-\RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm,footskip=15mm]{geometry}
+\RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm,footskip=18mm]{geometry}
 
 \RequirePackage{basicLayoutLT}
 \RequirePackage{myBMZ}  % loads basicMacrosLT
