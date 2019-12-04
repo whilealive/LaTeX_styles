@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     06.11.2019
+% DATE     04.12.2019
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -19,7 +19,7 @@
 \RequirePackage[a4paper,inner=35mm,outer=35mm,top=30mm,bottom=40mm,footskip=18mm]{geometry}
 
 \RequirePackage{basicLayoutLT}
-\RequirePackage{myBMZ}  % loads basicMacrosLT
+\RequirePackage{myBMZ}  % loads myMacrosMisc, myMacrosMath
 
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}

@@ -17,7 +17,7 @@
 \RequirePackage[a4paper,textwidth=160mm,top=30mm,bottom=40mm]{geometry}  % extra wide
 
 \RequirePackage{basicLayoutLT}
-\RequirePackage{myBMZ}  % loads basicMacrosLT
+\RequirePackage{myBMZ}  % loads myMacrosMisc, myMacrosMath
 \RequirePackage{tikzStyle}
 \RequirePackage{tikz3dStyle}
 \RequirePackage{pgfplotsStyle}
