@@ -4,7 +4,7 @@
 % INFO     documentclass für BMZ Prüfungen (LuaLaTeX)
 %          Es gibt eine normale Serie (Teil 1 und 2) und eine Nachholprüfung.
 %
-% DATE     04.12.2019
+% DATE     05.02.2020
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -94,7 +94,7 @@
 }
 
 % Punktanzahl pro Teilaufgabe, rechtsbündig
-\newcommand{\Pkt}[1]{\hfill [#1 Pkt]}
+\newcommand{\Pkt}[1]{\hfill [#1~Pkt]}
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}
