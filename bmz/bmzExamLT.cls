@@ -12,7 +12,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     09.06.2020
+% DATE     14.06.2020
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -133,7 +133,7 @@
 {
   \IfNoValueF{#1}{\keys_set:nn{bmzExam/examEx}{#1}}
   \stepcounter{ExamExerciseCounter}
-  \textbf{Aufgabe\ \theExamExerciseCounter\ } [#2 Pkt]\ 
+  \textbf{Aufgabe\ \theExamExerciseCounter\ } [#2\ Pkt]\ 
   \addtocounter{TotalOfPoints}{#2}\ignorespaces
 }{
   \bool_if:NTF{\l__examEx_closureLine_bool}
