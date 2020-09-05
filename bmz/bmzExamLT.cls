@@ -12,7 +12,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     26.08.2020
+% DATE     05.09.2020
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -161,7 +161,7 @@
 {%
   \IfFileExists{#1}%
     {\includegraphics[width=\linewidth]{#1}\par}%
-    {\textcolor{red}{(Noch) keine Lösungen vorhanden.}%
+    {\textcolor{red}{(Noch) keine Lösungen vorhanden.}\par%
   }%
 }%
   
