@@ -12,7 +12,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     05.09.2020
+% DATE     15.09.2020
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -137,7 +137,7 @@
   \addtocounter{TotalOfPoints}{#2}\ignorespaces
 }{
   \bool_if:NTF{\l__examEx_closureLine_bool}
-    {\hrulefill\hBZ}
+    {\hBZ\hrulefill\hBZ}
     {\bool_if:NTF{\l__examLsg_hide_bool}{}{\clearpage}}
   \bool_if:NTF{\l__examEx_notes_bool}
     {\FillNotes}
