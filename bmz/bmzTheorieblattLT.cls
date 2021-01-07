@@ -8,7 +8,7 @@
 %          \SetChapter{Kapitel hier}
 %          \SetTitel{Titel hier}
 %
-% DATE     04.12.2019
+% DATE     07.01.2021
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -24,6 +24,15 @@
 % keine Nummern in section usw.
 \setcounter{secnumdepth}{-2}
 
+% create a norm
+\def\@nDATE{}
+\def\@nFILENAME{}
+\newcommand{\SetNorm}[2]%
+{%
+  \def\@nFILENAME{#1}%
+  \def\@nDATE{#2}%
+}%
+
 % header/footer:
 % settings for pagestyle "fancy"
 \fancyhf{}  % clear all fields
@@ -31,6 +40,8 @@
 \fancyhead[LO,LE]{\BMZ}
 \fancyhead[CO,CE]{\nouppercase{\leftmark}}
 \fancyfoot[CO,CE]{\thepage}
+\fancyfoot[LO,LE]{\tiny\@nFILENAME}
+\fancyfoot[RO,RE]{\tiny\@nDATE}
 
 % settings for pagestyle "FirstPage"
 \fancypagestyle{FirstPage}%
@@ -38,6 +49,8 @@
   \fancyhf{}%
   \renewcommand{\headrulewidth}{0pt}%
   \fancyfoot[CO,CE]{\thepage}%
+  \fancyfoot[LO,LE]{\tiny\@nFILENAME}
+  \fancyfoot[RO,RE]{\tiny\@nDATE}
 }
 
 
