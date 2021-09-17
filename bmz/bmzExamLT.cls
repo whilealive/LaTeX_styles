@@ -12,7 +12,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     15.09.2020
+% DATE     17.09.2021
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -160,7 +160,7 @@
 \newcommand*{\includeSolution}[1]%
 {%
   \IfFileExists{#1}%
-    {\includegraphics[width=\linewidth]{#1}\par}%
+    {\includegraphics[width=.95\linewidth]{#1}\par}%
     {\textcolor{red}{(Noch) keine Lösungen vorhanden.}\par%
   }%
 }%
