@@ -12,7 +12,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     17.09.2021
+% DATE     05.01.2022
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -166,7 +166,7 @@
 }%
   
 % Punktanzahl pro Teilaufgabe, rechtsbündig
-\newcommand{\Pkt}[1]{\hfill [#1~Pkt]}%
+\newcommand{\Pkt}[1]{\hspace*{1em}\hfill [#1~Pkt]\par}%
 
 % Notizen-Seite (ganze Seite mit Häuschenpapier)
 \newcommand*{\Notizen}{\clearpage\textbf{Notizen}\Notes{53}\clearpage}%
