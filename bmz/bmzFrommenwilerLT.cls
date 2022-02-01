@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     23.10.2019
+% DATE     01.02.2022
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -28,20 +28,35 @@
 % globaler Ordner der einzelnen Lösungen
 \newcommand*{\Dir}{Loesungen/}
 
-% keine Nummern in section usw.
-\setcounter{secnumdepth}{-2}
-
 % header/footer
 \lhead{\BMZ}
 \rhead{\thepage}
 \cfoot{}
 \chead[]{Musterlösungen Frommenwiler \@Thema}
 
+% clickable links in table of contents
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+}
+
+% this fixes overful hboxes in table of contents
+\usepackage[titles]{tocloft}
+
 % ----------------------------------------------------------------
 % custom commands and environments...
 % ----------------------------------------------------------------
 \def\@Thema{Thema}
 \newcommand*{\SetThema}[1]{\def\@Thema{#1}}
+
+\newenvironment{ML}[1]{%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{Aufgabe~#1}
+  \SpaceAbove%
+  \BZ\noindent\textbf{Aufgabe~#1\enspace}%
+}{\SpaceBelow}
 
 % ----------------------------------------------------------------
 % Begin document with...
@@ -50,6 +65,8 @@
   \thispagestyle{empty}%
   \Adressblock{25mm}{18.75mm}%
   \vspace*{22mm}%
-  \section{Musterlösungen Frommenwiler \@Thema}%
+  \section*{Musterlösungen Frommenwiler \@Thema}%
+  \tableofcontents
+  \clearpage
 }
 
