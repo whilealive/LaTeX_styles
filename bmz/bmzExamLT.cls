@@ -141,7 +141,7 @@
     {\bool_if:NTF{\l__examLsg_hide_bool}{}{\clearpage}}
   \bool_if:NTF{\l__examEx_notes_bool}
     {\FillNotes}
-    {}
+    {\bool_if:NTF{\l__examEx_closureLine_bool}{}{\clearpage}}
 }
 
 % Musterlösung pro Aufgabe
