@@ -1,9 +1,8 @@
 % ==================================================================
 % FILE     myBMZ.sty
-% MACHINE  all
 % INFO     common bmz stuff
 %
-% DATE     21.03.2024
+% DATE     25.06.2024
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -75,23 +74,10 @@
   \SpaceBelow
 }
 
-% HP Prime environment
-%\RequirePackage{marginnote}
-%\NewDocumentEnvironment{TR}{ O{} }
-%{%
-%  \par\SpaceAbove\BZ
-%  \begin{minipage}[t]{\linewidth}
-%    \marginnote{\includegraphics[width=12mm]{HP-Prime.png}}[2ex]
-%    \begin{mdframed}[linewidth=0pt, backgroundcolor=gray!40]
-%      {\bfseries\sffamily TR: #1}\par
-%}{%
-%    \end{mdframed}%
-%    \vskip 0pt  % This is a hack, since "skipbelow" of mdframed is broken.
-%  \end{minipage}%
-%  \SpaceBelow
-%}
-
 % Calculator keys
 \newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
 \newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
 
+% Frommenwiler-Abkürzungen
+\newcommand*{\FA}{\ensuremath{[\text{F}_\text{A}]}\ }  % FA = Frommenwiler Algebra
+\newcommand*{\FG}{\ensuremath{[\text{F}_\text{G}]}\ }  % FG = Frommenwiler Geometrie
