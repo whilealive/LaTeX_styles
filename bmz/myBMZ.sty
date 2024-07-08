@@ -2,22 +2,19 @@
 % FILE     myBMZ.sty
 % INFO     common bmz stuff
 %
-% DATE     25.06.2024
+% DATE     08.07.2024
 % OWNER    Bischofberger
 % ==================================================================
 
 \ProvidesPackage{myBMZ}
-
-\RequirePackage{myMacrosMisc}
-\RequirePackage{myMacrosMath}
-\RequirePackage{myExercises}
 
 % change globally to ]a,b[ intervalls here...
 \RequirePackage{interval}
 \intervalconfig{soft open fences, separator symbol={;}}
 
 % BMZ
-\newcommand*{\BMZ}{B\kern0.10em M\kern0.07em S Zürich}
+\newcommand*{\BMZ}{B\kern0.07em M\kern0.05em S Zürich}
+\newcommand*{\TALS}{T\kern-0.02em A\kern0.08em L\kern0.08em S\ }
 
 % Adressblock #1:hpos, #2:vpos
 \RequirePackage[absolute]{textpos}

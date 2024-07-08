@@ -1,6 +1,5 @@
 % ==================================================================
 % FILE     bmzExamLT.cls
-% MACHINE  all
 % INFO     Dokumentenklasse für BMZ Prüfungen (LuaLaTeX)
 %
 %          Eine Präambel hat folgende Form:
@@ -12,7 +11,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     07.11.2022
+% DATE     08.07.2024
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -24,11 +23,14 @@
 \RequirePackage[a4paper,textwidth=140mm,top=30mm,bottom=40mm]{geometry}%
 
 \RequirePackage{basicLayoutLT}%
-\RequirePackage{myBMZ}  % loads myMacrosMisc, myMacrosMath
+\RequirePackage{myMacrosMisc}%
+\RequirePackage{myMacrosMath}%
+\RequirePackage{myExercises}%
 \RequirePackage{tikzStyle}%
 \RequirePackage{tikz3dStyle}%
 \RequirePackage{pgfplotsStyle}%
 \RequirePackage{myNotes}%
+\RequirePackage{myBMZ}%
 
 % keys: 
 % Steuern die Form der Aufgaben/Lösungen.

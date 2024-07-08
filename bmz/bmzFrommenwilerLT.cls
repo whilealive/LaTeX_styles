@@ -6,7 +6,7 @@
 %          \documentclass{bmzFrommenwiler}
 %          \SetThema{Algebra} oder \SetThema{Geometrie}
 %
-% DATE     01.02.2022
+% DATE     08.07.2024
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -17,10 +17,13 @@
 \RequirePackage[a4paper,textwidth=160mm,top=30mm,bottom=40mm]{geometry}  % extra wide
 
 \RequirePackage{basicLayoutLT}
-\RequirePackage{myBMZ}  % loads myMacrosMisc, myMacrosMath
+\RequirePackage{myMacrosMisc}
+\RequirePackage{myMacrosMath}
+\RequirePackage{myExercises}
 \RequirePackage{tikzStyle}
 \RequirePackage{tikz3dStyle}
 \RequirePackage{pgfplotsStyle}
+\RequirePackage{myBMZ}
 
 % images
 \graphicspath{{Loesungen/}}
