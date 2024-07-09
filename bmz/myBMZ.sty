@@ -2,17 +2,16 @@
 % FILE     myBMZ.sty
 % INFO     common bmz stuff
 %
-% DATE     08.07.2024
+% DATE     09.07.2024
 % OWNER    Bischofberger
 % ==================================================================
+% TODO:
+% Dinge wie Frommenwiler-Aufgabenliste, Pfadliste für pdfs usw. könnten
+% evtl. ausgelagert werden...
 
 \ProvidesPackage{myBMZ}
 
-% change globally to ]a,b[ intervalls here...
-\RequirePackage{interval}
-\intervalconfig{soft open fences, separator symbol={;}}
-
-% BMZ
+% BMZ, TALS usw.
 \newcommand*{\BMZ}{B\kern0.07em M\kern0.05em S Zürich}
 \newcommand*{\TALS}{T\kern-0.02em A\kern0.08em L\kern0.08em S\ }
 
@@ -71,10 +70,10 @@
   \SpaceBelow
 }
 
-% Calculator keys
-\newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
-\newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
-
 % Frommenwiler-Abkürzungen
 \newcommand*{\FA}{\ensuremath{[\text{F}_\text{A}]}\ }  % FA = Frommenwiler Algebra
 \newcommand*{\FG}{\ensuremath{[\text{F}_\text{G}]}\ }  % FG = Frommenwiler Geometrie
+
+% Calculator keys
+\newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
+\newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
