@@ -2,7 +2,7 @@
 % FILE     myMacrosMath.sty
 % INFO     Mathematical macro collection (LuaLaTeX)
 %
-% DATE     09.07.2024
+% DATE     30.10.2024
 % OWNER    Bischofberger
 % ==================================================================
 % This work may be distributed and/or modified under the
@@ -105,13 +105,19 @@
 {%
   line-width        .tl_set:N = \l__basicMacros_LineWidth_tl,%
   raise-numerator   .tl_set:N = \l__basicMacros_RaiseNumerator_tl,%
+  rn                .tl_set:N = \l__basicMacros_RaiseNumerator_tl,%
   lower-denumerator .tl_set:N = \l__basicMacros_LowerDenumerator_tl,%
+  ld                .tl_set:N = \l__basicMacros_LowerDenumerator_tl,%
   line-width        .value_required:n = true,%
   raise-numerator   .value_required:n = true,%
+  rn                .value_required:n = true,%
   lower-denumerator .value_required:n = true,%
+  ld                .value_required:n = true,%
   line-width        .initial:n = {},%
   raise-numerator   .initial:n = {0pt},%
-  lower-denumerator .initial:n = {0pt}%
+  rn                .initial:n = {0pt},%
+  lower-denumerator .initial:n = {0pt},%
+  ld                .initial:n = {0pt}%
 }%
 
 \NewDocumentCommand{\myfrac}{ o m m }{%
