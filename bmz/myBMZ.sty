@@ -1,0 +1,79 @@
+% ==================================================================
+% FILE     myBMZ.sty
+% INFO     common bmz stuff
+%
+% DATE     09.07.2024
+% OWNER    Bischofberger
+% ==================================================================
+% TODO:
+% Dinge wie Frommenwiler-Aufgabenliste, Pfadliste für pdfs usw. könnten
+% evtl. ausgelagert werden...
+
+\ProvidesPackage{myBMZ}
+
+% BMZ, TALS usw.
+\newcommand*{\BMZ}{B\kern0.07em M\kern0.05em S Zürich}
+\newcommand*{\TALS}{T\kern-0.02em A\kern0.08em L\kern0.08em S\ }
+
+% Adressblock #1:hpos, #2:vpos
+\RequirePackage[absolute]{textpos}
+\newcommand*{\Adressblock}[2]{%
+  \begin{textblock*}{60mm}(#1,#2)
+    Berufsmaturitätsschule Zürich\\
+    Lagerstrasse 55, 8090 Zürich\\[2ex]
+    Bruno Bischofberger
+  \end{textblock*}%
+}
+
+% include all BMZ-Theorie subfolders (for pdf inclusion)
+\def\@TheoriePath{$HOME/Documents/Work/BMS-ZH/01-Unterricht/02-Theorie}
+\newcommand*{\includeBMZTheorieGraphicspath}{%
+  \graphicspath{%
+      {\@TheoriePath/01-Arithmetik-Algebra/01-Algebra/}%
+      {\@TheoriePath/01-Arithmetik-Algebra/02-Potenzen/}%
+      {\@TheoriePath/02-Gleichungen/01-Lineare-Gleichungen/}%
+      {\@TheoriePath/02-Gleichungen/02-Lineare-Gleichungssyssteme/}%
+      {\@TheoriePath/02-Gleichungen/03-Quadratische-Gleichungen/}%
+      {\@TheoriePath/02-Gleichungen/04-Nichtlineare-Gleichungen/}%
+      {\@TheoriePath/03-Funktionen/01-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/02-Lineare-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/03-Quadratische-Funktionen/}%
+      {\@TheoriePath/03-Funktionen/04-Potenzfunktionen/}%
+      {\@TheoriePath/03-Funktionen/05-Polynomfunktionen/}%
+      {\@TheoriePath/03-Funktionen/06-Exponentialfunktionen/}%
+      {\@TheoriePath/05-Geometrie/01-PlanimetrieI/}%
+      {\@TheoriePath/05-Geometrie/02-PlanimetrieII/}%
+      {\@TheoriePath/05-Geometrie/03-TrigonometrieI/}%
+      {\@TheoriePath/05-Geometrie/04-TrigonometrieII/}%
+      {\@TheoriePath/05-Geometrie/05-Stereometrie/}%
+      {\@TheoriePath/05-Geometrie/06-Vektorgeometrie/}%
+    }
+}
+
+% Frommenwiler Aufgabenliste
+% Muss hier bewusst ohne tabularx implementiert werden (tabularx würde environ package 
+% voraussetzen). Die Kolonnenbreiten werden vorab berechnet.
+\newlength\FColWidth
+\setlength\FColWidth{\dimexpr(\textwidth-12mm)/2-3\tabcolsep\relax}
+\NewDocumentEnvironment{Frommenwiler}{ O{Lösen Sie die folgenden Aufgaben aus Frommenwiler.} }
+{%
+  \SpaceAbove
+  \BZ\noindent#1\par\nopagebreak
+  \vskip .5ex
+  \begin{tabular}{@{}p{\FColWidth}p{12mm}p{\FColWidth}@{}}
+    \toprule
+    Aufgabe & Seite & Bemerkungen\\
+    \midrule
+}{%
+    \bottomrule
+  \end{tabular}
+  \SpaceBelow
+}
+
+% Frommenwiler-Abkürzungen
+\newcommand*{\FA}{\ensuremath{[\text{F}_\text{A}]}\ }  % FA = Frommenwiler Algebra
+\newcommand*{\FG}{\ensuremath{[\text{F}_\text{G}]}\ }  % FG = Frommenwiler Geometrie
+
+% Calculator keys
+\newcommand*{\Keys}[1]{\fbox{\texttt{#1}}}
+\newcommand*{\BKeys}[1]{\colorbox{black}{\color{white}\texttt{#1}}}
