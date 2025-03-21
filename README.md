@@ -1,5 +1,5 @@
-basicStyles: Personal LaTex styles
-=================================
+# My personal LaTeX styles: Personal LaTex styles
+
 - for all LaTeX documents
 - LT: compile with LuaLaTeX
   uses Lucida Bright from TUG
