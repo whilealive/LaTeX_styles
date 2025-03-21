@@ -1,4 +1,4 @@
-# My personal LaTeX styles: Personal LaTex styles
+# My LaTeX styles
 
 - for all LaTeX documents
 - LT: compile with LuaLaTeX
