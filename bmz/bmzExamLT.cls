@@ -11,7 +11,7 @@
 %          \SetTeil{2}
 %
 %
-% DATE     08.07.2024
+% DATE     12.05.2025
 % OWNER    Bischofberger
 % ==================================================================
 
@@ -79,7 +79,7 @@
 
 
 % Pfadangabe der Prüfungsaufgabensammlung
-\newcommand*{\Path}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Prüfungsaufgabensammlung/}%
+\newcommand*{\Path}{$HOME/Documents/Work/BMS-ZH/01-Unterricht/05-Pruefungsaufgabensammlung/}%
 \newcommand*{\PathTALS}{01-TALS/TALS-Aufgaben/}%
 \newcommand*{\PathDLGESO}{02-DL-GESO/DL-GESO-Aufgaben/}%
 \newcommand*{\Lsg}{Lsg/}%
